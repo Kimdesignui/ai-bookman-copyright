@@ -1,0 +1,335 @@
+﻿<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>VHMT AI BookMan - Chi tiết sách</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <style>
+    .detail-section {
+      margin-top: 24px;
+      margin-bottom: 24px;
+      background: #fff;
+      border: 1px solid #d8e0e8;
+      border-radius: 8px;
+      padding: 24px;
+    }
+
+    .detail-cover {
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid #edf1f5;
+      background: #fff;
+    }
+
+    .detail-cover img {
+      width: 100%;
+      display: block;
+      aspect-ratio: 2 / 3;
+      object-fit: cover;
+    }
+
+    .detail-meta h1 {
+      margin: 0 0 10px;
+      font-size: 30px;
+      line-height: 1.3;
+      font-weight: 700;
+      color: #1f2833;
+    }
+
+    .detail-price {
+      margin: 0 0 14px;
+      font-size: 28px;
+      line-height: 1.2;
+      color: #ff5c00;
+      font-weight: 700;
+    }
+
+    .detail-desc {
+      margin: 0;
+      color: #4e5a67;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="container header-row">
+      <div class="header-brand">
+        <a class="brand brand-vhmt" href="index.html">
+          <img class="brand-vhmt-icon" src="https://www.figma.com/api/mcp/asset/db94e6de-10dc-45c4-9d77-4c1a2d335af3" alt="VHMT Logo">
+          <img class="brand-vhmt-text" src="https://www.figma.com/api/mcp/asset/ebeb3ba9-d360-4e25-9cf8-3f5e150656dd" alt="VHMT Công nghệ vì cộng đồng">
+        </a>
+      </div>
+      <div class="header-search-group">
+        <div class="dropdown category-dropdown-wrap">
+          <button id="category-toggle" class="category-toggle dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="bi bi-grid-3x3-gap"></i>
+            <span>Danh mục</span>
+          </button>
+          <ul id="category-dropdown-list" class="dropdown-menu category-dropdown-menu"></ul>
+        </div>
+        <div class="search-wrap">
+          <input type="text" placeholder="Tìm sách, tác giả,...">
+          <button type="button"><i class="bi bi-search"></i> <span>Tìm kiếm</span></button>
+        </div>
+      </div>
+      <div class="header-actions">
+        <a class="hotline-box" href="tel:0367006412">
+          <span class="hotline-icon"><i class="bi bi-telephone-plus"></i></span>
+          <span class="hotline-text">
+            <small>Hotline</small>
+            <strong>0367006412</strong>
+          </span>
+        </a>
+        <div class="header-icons">
+          <a class="icon-btn cart" href="https://sachquocgia.vn/checkout/cart" target="_blank" rel="noreferrer" aria-label="Giỏ hàng">
+            <i class="bi bi-cart3"></i>
+            <em>0</em>
+          </a>
+          <a class="icon-btn bookshelf" href="https://sachquocgia.vn/customer/purchased-book" target="_blank" rel="noreferrer" aria-label="Tủ sách"><i class="bi bi-bookshelf"></i></a>
+          <a class="icon-btn account" href="https://sachquocgia.vn/customer/login" target="_blank" rel="noreferrer" aria-label="Tài khoản"><i class="bi bi-person"></i></a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="page">
+    <section class="container detail-section">
+      <div class="section-heading">
+        <h3>Chi tiết sách</h3>
+        <a href="index.html">Quay lại trang chủ <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+      </div>
+      <div class="row g-4 align-items-start pt-3">
+        <div class="col-lg-4 col-md-5">
+          <div class="detail-cover">
+            <img src="https://images.sachquocgia.vn/Thumbs/2025/10/30/image-20251030172913646.jpg" alt="Bìa sách">
+          </div>
+        </div>
+        <div class="col-lg-8 col-md-7 detail-meta">
+          <h1>Miền Nam trong trái tim Hồ Chí Minh</h1>
+          <p class="detail-price">73.550₫</p>
+          <p class="detail-desc">Trang chi tiết sách mẫu. Header và footer được giữ đúng cấu trúc của trang chủ để làm nền cho phần triển khai chi tiết nội dung sách tiếp theo.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-main">
+      <div class="footer-left">
+        <img class="footer-brand lazy-image" data-src="https://www.figma.com/api/mcp/asset/db94e6de-10dc-45c4-9d77-4c1a2d335af3" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt="VHMT Logo icon" loading="lazy" decoding="async">
+        <img class="footer-brand-text lazy-image" data-src="https://www.figma.com/api/mcp/asset/ebeb3ba9-d360-4e25-9cf8-3f5e150656dd" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt="VHMT Công nghệ vì cộng đồng" loading="lazy" decoding="async">
+        <h4 class="footer-company">Công ty Cổ Phần Công Nghệ VHMT Việt Nam</h4>
+        <ul class="footer-contact">
+          <li><i class="bi bi-geo-alt"></i> Căn 16, Đường 3-8/2, KĐT Gamuda Gardens, Phường Hoàng Mai, Thành phố Hà Nội</li>
+          <li><i class="bi bi-envelope-at"></i> info@vhmt.vn</li>
+          <li><i class="bi bi-telephone"></i> 024.6663.5678</li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>Chúng tôi phục vụ</h4>
+          <ul>
+            <li><a href="#">Nhà sách</a></li>
+            <li><a href="#">Trường đại học</a></li>
+            <li><a href="#">Doanh nghiệp/ Tổ chức</a></li>
+            <li><a href="#">Quản lý thư viện</a></li>
+            <li><a href="#">Sinh viên</a></li>
+            <li><a href="#">Viện Nghiên cứu</a></li>
+            <li><a href="#">Tác giả</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Về chúng tôi</h4>
+          <ul>
+            <li><a href="#">Giới thiệu</a></li>
+            <li><a href="#">Liên hệ</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Chính sách và điều khoản</h4>
+          <ul>
+            <li><a href="#">Cách thức vận chuyển</a></li>
+            <li><a href="#">Chính sách bảo mật</a></li>
+            <li><a href="#">Chính sách khách hàng mua sỉ</a></li>
+            <li><a href="#">Điều khoản sử dụng</a></li>
+            <li><a href="#">Chính sách hồi hoàn</a></li>
+            <li><a href="#">Hướng dẫn đăng ký tài khoản</a></li>
+            <li><a href="#">Hướng dẫn đọc sách ebook</a></li>
+            <li><a href="#">Hướng dẫn kiểm tra tem sách</a></li>
+            <li><a href="#">Hướng dẫn thuê sách ebook</a></li>
+            <li><a href="#">Hướng dẫn nạp tiền vào ví</a></li>
+            <li><a href="#">Hướng dẫn mua sách giấy</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <div class="footer-social">
+        <p>Theo dõi chúng tôi tại:</p>
+        <div class="footer-social-icons">
+          <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+          <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+          <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+          <a href="#" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+        </div>
+      </div>
+      <div class="footer-apps">
+        <div class="footer-app-item">
+          <img src="assets/img/QR%20Android.svg" alt="QR Android" loading="lazy" decoding="async">
+          <div>
+            <p>Tải ứng dụng dành cho máy Android:</p>
+            <img class="lazy-image" data-src="https://www.figma.com/api/mcp/asset/fc0b6402-151a-4556-a54c-352652f4015a" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt="Google Play" loading="lazy" decoding="async">
+          </div>
+        </div>
+        <div class="footer-app-item">
+          <img src="assets/img/QR%20iOS.svg" alt="QR iOS" loading="lazy" decoding="async">
+          <div>
+            <p>Tải ứng dụng dành cho IOS:</p>
+            <img class="lazy-image" data-src="https://www.figma.com/api/mcp/asset/9917fa9d-6a78-4187-80c8-9d8a295ddad5" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt="App Store" loading="lazy" decoding="async">
+          </div>
+        </div>
+      </div>
+      <img class="footer-bocongthuong lazy-image" data-src="https://www.figma.com/api/mcp/asset/e33ee58b-f7a0-4d8c-be73-2a2ba00e3689" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt="Đã thông báo Bộ Công Thương" loading="lazy" decoding="async">
+    </div>
+    <div class="copyright">Copyright © 2020 - Công ty Cổ phần Công nghệ VHMT Việt Nam. All rights reserved.</div>
+  </footer>
+
+  <script>
+    const site = "https://sachquocgia.vn";
+    const lazyPlaceholder = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==";
+
+    const categories = [
+      { title: "Tủ sách Nhân vật", href: "/nhan-vat-c189", icon: "bi-journal-bookmark" },
+      { title: "Tủ sách Lý luận chính trị", href: "/sach-ly-luan-chinh-tri-c191", icon: "bi-globe2" },
+      { title: "Tủ sách Luật", href: "/tu-sach-luat-c202", icon: "bi-bookmark-star" },
+      { title: "Tủ sách Giáo trình - Tài liệu", href: "/giao-trinh-va-tai-lieu-hoc-tap-c203", icon: "bi-building" },
+      { title: "Tủ sách Ban chỉ đạo 35", href: "/tu-sach-35-c199", icon: "bi-file-earmark-text" },
+      { title: "Tủ sách Chi Bộ", href: "/tu-sach-chi-bo-c193", icon: "bi-collection" }
+    ];
+
+    function resolveItemHref(href) {
+      return /^https?:\/\//i.test(href) ? href : `${site}${href}`;
+    }
+
+    function renderCategoryDropdown() {
+      const wrap = document.getElementById("category-dropdown-list");
+      const items = categories.map((item) => `
+        <li>
+          <a class="dropdown-item category-dropdown-item" href="${resolveItemHref(item.href)}" target="_blank" rel="noreferrer">
+            <span class="category-item-icon" aria-hidden="true"><i class="bi ${item.icon || "bi-journal-bookmark"}"></i></span>
+            <span class="category-item-label">${item.title}</span>
+            <i class="bi bi-chevron-right category-item-arrow" aria-hidden="true"></i>
+          </a>
+        </li>
+      `).join("");
+
+      wrap.innerHTML = `<li class="category-dropdown-heading">
+          <span>Danh mục sách</span>
+          <i class="bi bi-list"></i>
+        </li>
+        ${items}
+        <li><hr class="dropdown-divider m-0"></li>
+        <li>
+          <a class="dropdown-item category-dropdown-all" href="https://sachquocgia.vn/tat-ca-danh-muc" target="_blank" rel="noreferrer">
+            <i class="bi bi-list"></i>
+            <span>Xem tất cả danh mục</span>
+          </a>
+        </li>`;
+    }
+
+    function initCategoryDropdownInteraction() {
+      const wrap = document.querySelector(".category-dropdown-wrap");
+      const toggle = document.getElementById("category-toggle");
+      const menu = document.getElementById("category-dropdown-list");
+      if (!wrap || !toggle || !menu) return;
+      if (!window.bootstrap) {
+        window.addEventListener("load", initCategoryDropdownInteraction, { once: true });
+        return;
+      }
+
+      const overlay = document.createElement("div");
+      overlay.className = "category-menu-overlay";
+      document.body.appendChild(overlay);
+
+      const dropdown = bootstrap.Dropdown.getOrCreateInstance(toggle, { autoClose: true });
+      let hideTimer;
+
+      const showMenu = () => {
+        clearTimeout(hideTimer);
+        dropdown.show();
+      };
+
+      const hideMenu = (delay = 110) => {
+        clearTimeout(hideTimer);
+        hideTimer = setTimeout(() => dropdown.hide(), delay);
+      };
+
+      const hideNow = () => {
+        clearTimeout(hideTimer);
+        dropdown.hide();
+      };
+
+      if (window.matchMedia("(hover: hover)").matches) {
+        wrap.addEventListener("mouseenter", showMenu);
+        wrap.addEventListener("mouseleave", () => hideMenu(120));
+        menu.addEventListener("mouseenter", () => clearTimeout(hideTimer));
+        menu.addEventListener("mouseleave", () => hideMenu(80));
+      }
+
+      toggle.addEventListener("show.bs.dropdown", () => {
+        overlay.classList.add("active");
+        document.body.classList.add("category-overlay-open");
+      });
+
+      toggle.addEventListener("hide.bs.dropdown", () => {
+        overlay.classList.remove("active");
+        document.body.classList.remove("category-overlay-open");
+      });
+
+      toggle.addEventListener("focus", showMenu);
+      overlay.addEventListener("click", hideNow);
+      overlay.addEventListener("mouseenter", hideNow);
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") hideNow();
+      });
+    }
+
+    function initLazyLoad() {
+      const targets = document.querySelectorAll("img[data-src]");
+      if (!("IntersectionObserver" in window)) {
+        targets.forEach((img) => {
+          img.src = img.dataset.src;
+          img.removeAttribute("data-src");
+        });
+        return;
+      }
+
+      const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          const img = entry.target;
+          const src = img.getAttribute("data-src");
+          if (src) img.src = src;
+          img.removeAttribute("data-src");
+          obs.unobserve(img);
+        });
+      }, { rootMargin: "160px 0px" });
+
+      targets.forEach((img) => observer.observe(img));
+    }
+
+    renderCategoryDropdown();
+    initCategoryDropdownInteraction();
+    initLazyLoad();
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
