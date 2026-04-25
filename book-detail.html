@@ -63,8 +63,7 @@
     <div class="container header-row">
       <div class="header-brand">
         <a class="brand brand-vhmt" href="index.html">
-          <img class="brand-vhmt-icon" src="https://www.figma.com/api/mcp/asset/db94e6de-10dc-45c4-9d77-4c1a2d335af3" alt="VHMT Logo">
-          <img class="brand-vhmt-text" src="https://www.figma.com/api/mcp/asset/ebeb3ba9-d360-4e25-9cf8-3f5e150656dd" alt="VHMT Công nghệ vì cộng đồng">
+          <img class="brand-vhmt-logo" src="assets/img/Logo-VHMT-header.svg" alt="VHMT Công nghệ vì cộng đồng">
         </a>
       </div>
       <div class="header-search-group">
@@ -124,8 +123,7 @@
   <footer class="footer">
     <div class="container footer-main">
       <div class="footer-left">
-        <img class="footer-brand lazy-image" data-src="https://www.figma.com/api/mcp/asset/db94e6de-10dc-45c4-9d77-4c1a2d335af3" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt="VHMT Logo icon" loading="lazy" decoding="async">
-        <img class="footer-brand-text lazy-image" data-src="https://www.figma.com/api/mcp/asset/ebeb3ba9-d360-4e25-9cf8-3f5e150656dd" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt="VHMT Công nghệ vì cộng đồng" loading="lazy" decoding="async">
+        <img class="footer-brand-logo" src="assets/img/Logo-VHMT.svg" alt="VHMT Công nghệ vì cộng đồng" loading="lazy" decoding="async">
         <h4 class="footer-company">Công ty Cổ Phần Công Nghệ VHMT Việt Nam</h4>
         <ul class="footer-contact">
           <li><i class="bi bi-geo-alt"></i> Căn 16, Đường 3-8/2, KĐT Gamuda Gardens, Phường Hoàng Mai, Thành phố Hà Nội</li>
@@ -262,6 +260,17 @@
       const dropdown = bootstrap.Dropdown.getOrCreateInstance(toggle, { autoClose: true });
       let hideTimer;
 
+      const lockBodyScroll = () => {
+        const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+        if (scrollbarWidth > 0) document.body.style.paddingRight = `${scrollbarWidth}px`;
+        document.body.classList.add("category-overlay-open");
+      };
+
+      const unlockBodyScroll = () => {
+        document.body.classList.remove("category-overlay-open");
+        document.body.style.paddingRight = "";
+      };
+
       const showMenu = () => {
         clearTimeout(hideTimer);
         dropdown.show();
@@ -286,12 +295,12 @@
 
       toggle.addEventListener("show.bs.dropdown", () => {
         overlay.classList.add("active");
-        document.body.classList.add("category-overlay-open");
+        lockBodyScroll();
       });
 
       toggle.addEventListener("hide.bs.dropdown", () => {
         overlay.classList.remove("active");
-        document.body.classList.remove("category-overlay-open");
+        unlockBodyScroll();
       });
 
       toggle.addEventListener("focus", showMenu);
