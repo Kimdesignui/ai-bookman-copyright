@@ -109,6 +109,97 @@
     }
   }
 
+  class DisciplineDemoService {
+    buildPayload() {
+      return {
+        fileName: "Hỏi - đáp về xử lý vi phạm kỷ luật của Đảng (Xuất bản lần thứ hai).pdf",
+        intro: "Dưới đây là tóm tắt nội dung cơ sở kiến thức được cung cấp:",
+        sections: [
+          {
+            title: "1. Thông tin chung về tài liệu",
+            paragraphs: [
+              "Tài liệu có tên “Hỏi - đáp về xử lý vi phạm kỷ luật của Đảng (Xuất bản lần thứ hai).pdf” Fig. 115.",
+              "Cuốn sách được tái bản nhằm giúp cấp uỷ, tổ chức đảng, ủy ban kiểm tra cơ sở và đảng viên hiểu đúng, vận dụng đúng các quy định, hướng dẫn liên quan đến kỷ luật tổ chức đảng và đảng viên vi phạm Fig. 336."
+            ]
+          },
+          {
+            title: "2. Cấu trúc chính của tài liệu",
+            paragraphs: [
+              "Tài liệu gồm phần mục lục, lời nhà xuất bản và phần hỏi - đáp về xử lý vi phạm kỷ luật của Đảng Fig. 427.",
+              "Phần hỏi - đáp tập trung vào các nhóm tình huống thực tế để tham khảo, áp dụng trong công tác kiểm tra và giám sát Fig. 427."
+            ]
+          },
+          {
+            title: "3. Một số nhóm câu hỏi chính trong tài liệu",
+            paragraphs: [
+              "Nội dung đề cập quy trình kiểm tra đảng viên khi có dấu hiệu vi phạm; xử lý khi vi phạm phát ngôn, tư tưởng; và các tình tiết giảm nhẹ/tăng nặng Fig. 84.",
+              "Ngoài ra còn có nhóm câu hỏi về thẩm quyền, thời hiệu xử lý, miễn/khoan kỷ luật và trách nhiệm của tổ chức đảng Fig. 395."
+            ]
+          },
+          {
+            title: "4. Một số quy định cụ thể được trích dẫn trong tài liệu",
+            paragraphs: [
+              "Khoản 1 Điều 35 Điều lệ Đảng nêu nguyên tắc xử lý công minh, chính xác, kịp thời Fig. 138.",
+              "Quy định số 69-QĐ/TW và các hướng dẫn liên quan quy định căn cứ, thẩm quyền và quy trình xử lý vi phạm Fig. 138."
+            ]
+          },
+          {
+            title: "5. Kết luận ngắn gọn",
+            paragraphs: [
+              "Tài liệu cung cấp hệ thống hỏi - đáp thực tiễn, phù hợp làm nguồn tham chiếu nhanh cho nội dung xử lý vi phạm kỷ luật của Đảng Fig. 115."
+            ]
+          }
+        ],
+        figures: [
+          { id: "fig-12", label: "Fig. 12", caption: "Mã QR và hướng dẫn tra cứu" },
+          { id: "fig-16", label: "Fig. 16", caption: "Mục lục chủ đề chính" },
+          { id: "fig-115", label: "Fig. 115", caption: "Thông tin tổng quan tài liệu" },
+          { id: "fig-137", label: "Fig. 137", caption: "Nguyên tắc xử lý kỷ luật" },
+          { id: "fig-145", label: "Fig. 145", caption: "Nhóm tình tiết liên quan" },
+          { id: "fig-220", label: "Fig. 220", caption: "Quy trình tham chiếu" },
+          { id: "fig-221", label: "Fig. 221", caption: "Thẩm quyền xử lý" },
+          { id: "fig-336", label: "Fig. 336", caption: "Hướng dẫn áp dụng thực tế" },
+          { id: "fig-395", label: "Fig. 395", caption: "Nhóm câu hỏi trọng tâm" },
+          { id: "fig-427", label: "Fig. 427", caption: "Cấu trúc phần hỏi - đáp" }
+        ],
+        quoteImages: [
+          { id: "quote-1", label: "Đoạn trích 1", src: "assets/img/demo-trich-dan.jpg" },
+          { id: "quote-2", label: "Đoạn trích 2", src: "assets/img/demo-trich-dan.jpg" },
+          { id: "quote-3", label: "Đoạn trích 3", src: "assets/img/demo-trich-dan.jpg" }
+        ],
+        relatedPdfFiles: [
+          { id: "pdf-related-1", name: "Hỏi - đáp về xử lý vi phạm kỷ luật của Đảng (Xuất bản lần thứ hai).pdf" },
+          { id: "pdf-related-2", name: "Quy định 69-QĐ/TW và hướng dẫn thi hành về kỷ luật đảng viên.pdf" },
+          { id: "pdf-related-3", name: "Tổng hợp tình huống vi phạm phát ngôn, lập trường tư tưởng.pdf" }
+        ],
+        figureDetails: {
+          "fig-115": {
+            title: "Fig. 115",
+            lines: [
+              "24",
+              "Câu 7. Thời hiệu xử lý kỷ luật đảng viên vi phạm được tính từ thời điểm nào?",
+              "25",
+              "Câu 8. Đảng viên vi phạm trong trường hợp nào thì bị coi là tái phạm?",
+              "26",
+              "Câu 9. Những tình tiết nào được xem xét để giảm nhẹ mức kỷ luật đối với đảng viên vi phạm?",
+              "27",
+              "Câu 10. Những tình tiết nào được xem xét để tăng nặng mức kỷ luật đối với đảng viên vi phạm?",
+              "28",
+              "Câu 11. Trường hợp nào chưa kỷ luật, không hoặc miễn kỷ luật đối với đảng viên vi phạm?",
+              "29",
+              "Câu 12. Hình thức kỷ luật đối với đảng viên chính thức và đảng viên dự bị có gì khác nhau?"
+            ]
+          }
+        }
+      };
+    }
+
+    resolveFigure(payload, figId) {
+      if (!payload || !figId) return null;
+      return payload.figureDetails[figId] || null;
+    }
+  }
+
   class ReportExportService {
     buildPayload(prompt, currentBook) {
       const title = (currentBook && currentBook.title) || "Danh mục sách của Nhà xuất bản";
@@ -231,6 +322,20 @@
     async respond(text) {
       const normalized = norm(text);
       await new Promise(function (resolve) { window.setTimeout(resolve, 520); });
+      const isDisciplineStarter = normalized.indexOf("trich dan ve mot noi dung") > -1;
+      const isDisciplineQuestion =
+        normalized.indexOf("ky luat") > -1 &&
+        (normalized.indexOf("dang vien") > -1 ||
+          normalized.indexOf("phat ngon") > -1 ||
+          normalized.indexOf("lap truong tu tuong") > -1);
+
+      if (isDisciplineStarter || isDisciplineQuestion) {
+        return {
+          kind: "discipline_demo",
+          text: "Mình đã tổng hợp kết quả theo đúng tài liệu tham chiếu. Bạn có thể bấm vào các Fig để xem chi tiết.",
+          payload: this.ctx.disciplineDemoService.buildPayload()
+        };
+      }
       if (normalized.indexOf("bao cao") > -1 || normalized.indexOf("report") > -1) {
         const payload = this.ctx.reportService.buildPayload(text, this.ctx.config.currentBook);
         return { kind: "report", text: "Mình đã soạn xong báo cáo chuyên môn. Bạn mở file DOCX ngay bên dưới.", payload: payload };
@@ -256,37 +361,27 @@
       this.fileStore = new Map();
       this.reportStore = new Map();
       this.citationService = new CitationService();
+      this.disciplineDemoService = new DisciplineDemoService();
       this.reportService = new ReportExportService();
       this.engine = config.mode === "gemini" ? new ChatEngineGemini() : new ChatEngineMock({
         config: config,
         citationService: this.citationService,
+        disciplineDemoService: this.disciplineDemoService,
         reportService: this.reportService
       });
       this.activeCitationPayload = null;
+      this.activeDisciplinePayload = null;
+      this.disciplinePdfFile = null;
       this.currentPreviewFile = null;
     }
 
+   
     init() {
       if (document.getElementById("ai-chatbot-root")) return;
       this.injectMarkup();
       this.cacheEls();
       this.bind();
       this.playFabIntroAnimation();
-      this.pushMessage({
-        role: "bot",
-        type: "text",
-        content: "Xin chào, mình là AI Chatbot chuyên gia. Mình hỗ trợ 2 tác vụ chính: (1) soạn báo cáo chuyên môn và xuất DOCX/PDF, (2) tìm trích dẫn thông minh từ kho tri thức Nhà xuất bản."
-      });
-      this.pushMessage({
-        role: "user",
-        type: "text",
-        content: "Bạn lập giúp tôi báo cáo chuyên đề về đối ngoại và xuất file DOCX nhé."
-      });
-      this.pushMessage({
-        role: "bot",
-        type: "text",
-        content: "Được ngay. Mình sẽ tạo báo cáo theo danh mục sách liên quan và gửi tệp DOCX để bạn xem trước, sau đó có thể tạo thêm PDF nếu cần."
-      });
     }
 
     injectMarkup() {
@@ -299,15 +394,14 @@
         + "<div class='ai-chatbot-head-actions'><button type='button' class='ai-chatbot-btn-icon' data-action='toggle-expand' aria-label='Phóng to thu nhỏ'><i class='bi bi-arrows-angle-expand'></i></button><button type='button' class='ai-chatbot-btn-icon' data-action='close-chat' aria-label='Đóng'><i class='bi bi-x-lg'></i></button></div>"
         + "</header>"
         + "<div class='ai-chatbot-body'>"
-        + "<div class='ai-chatbot-empty'><div class='ai-chatbot-empty-icon'><i class='bi bi-stars'></i></div><h4>AI có thể hỗ trợ gì?</h4><p>Nhập yêu cầu hoặc chọn mẫu bên dưới để soạn báo cáo, xuất tệp và tìm trích dẫn nhanh.</p></div>"
+                + "<div class='ai-chatbot-empty'><div class='ai-chatbot-empty-icon'><img src='assets/img/Chatbot.svg' alt='AI BookMan'></div><h4>Chào mừng bạn đến với Trợ lý BookMan. Bạn cần hỗ trợ gì?</h4><p>Nhập câu hỏi của bạn ở vùng nhập nội dung hoặc chọn những chủ đề gợi ý</p></div>"
         + "<div class='ai-chatbot-thread' aria-live='polite'></div>"
-        + "<div class='ai-chatbot-starters'>"
-        + "<button type='button' data-starter='Lập báo cáo chuyên môn về chủ đề đối ngoại từ danh mục sách, xuất file DOCX'>📝 Soạn báo cáo & xuất DOCX</button>"
-        + "<button type='button' data-starter='Tìm các trích dẫn nổi bật về ngoại giao Việt Nam trong toàn bộ kho xuất bản'>🔎 Tìm trích dẫn thông minh</button>"
-        + "<button type='button' data-starter='Tạo bản PDF từ báo cáo vừa soạn để gửi lãnh đạo duyệt nhanh'>📄 Tạo PDF từ báo cáo</button>"
+                + "<div class='ai-chatbot-starters'>"
+        + "<button type='button' data-starter='Báo cáo từ dữ liệu sách bản quyền trên hệ thống'><i class='bi bi-journal-text'></i><span>Báo cáo từ dữ liệu sách bản quyền trên hệ thống</span></button>"
+        + "<button type='button' data-starter='Trích dẫn về một nội dung từ kho sách bản quyền'><i class='bi bi-blockquote-left'></i><span>Tìm trích dẫn về một nội dung</span></button>"
         + "</div>"
         + "</div>"
-        + "<form class='ai-chatbot-composer'><div class='ai-composer-field'><textarea rows='1' placeholder='Nhập yêu cầu'></textarea><span class='ai-composer-aiicon' aria-hidden='true'><img src='assets/img/ai-icon.svg' alt='AI'></span></div><button type='submit' aria-label='Gửi'><i class='bi bi-send-fill'></i></button></form>"
+        + "<form class='ai-chatbot-composer'><div class='ai-composer-field'><textarea rows='1' placeholder='Nhập câu hỏi cho BookMan...'></textarea><span class='ai-composer-aiicon' aria-hidden='true'><img src='assets/img/ai-icon.svg' alt='AI'></span></div><button type='submit' aria-label='Gửi'><i class='bi bi-send-fill'></i></button></form>"
         + "</section>"
         + "<div class='ai-chatbot-overlay ai-report-overlay' hidden>"
         + "<div class='ai-chatbot-modal ai-report-modal'>"
@@ -321,6 +415,28 @@
         + "<div class='ai-citation-body'><div class='ai-citation-snippets'></div><div class='ai-citation-preview'></div></div>"
         + "<footer class='ai-citation-footer'><button type='button' class='ai-citation-btn ai-citation-origin' data-action='open-origin'>Xem sách gốc</button><button type='button' class='ai-citation-btn' data-action='open-buy'>Mua</button><button type='button' class='ai-citation-btn ai-citation-btn-primary' data-action='open-view'>Xem</button></footer>"
         + "</div></div>"
+        + "<div class='ai-chatbot-overlay ai-fig-overlay' hidden>"
+        + "<div class='ai-chatbot-modal ai-fig-modal'>"
+        + "<header class='ai-modal-head'><div class='ai-modal-title-wrap'><h4 class='ai-modal-title'>Fig. 115</h4></div><div class='ai-modal-actions'><button type='button' class='ai-modal-close' data-action='close-fig'><i class='bi bi-x-lg'></i></button></div></header>"
+        + "<div class='ai-modal-body ai-fig-body'></div>"
+        + "<footer class='ai-fig-footer'><button type='button' class='ai-source-file-chip' data-action='open-fig-file'><img src='assets/img/PDF_file_icon.svg' alt='PDF icon'><span class='ai-fig-file-name'></span></button><div class='ai-fig-actions'><button type='button' class='ai-citation-btn ai-citation-origin' data-action='open-fig-origin'>Xem sách gốc</button><button type='button' class='ai-citation-btn ai-citation-btn-primary' data-action='open-fig-buy'>Mua</button></div></footer>"
+        + "</div></div>"
+        + "<div class='ai-chatbot-overlay ai-pdf-overlay' hidden>"
+        + "<div class='ai-chatbot-modal ai-pdf-modal'>"
+        + "<header class='ai-modal-head'><div class='ai-modal-title-wrap'><h4 class='ai-modal-title'>Document Previewer</h4></div><div class='ai-modal-actions'><button type='button' class='ai-modal-close' data-action='close-pdf'><i class='bi bi-x-lg'></i></button></div></header>"
+        + "<div class='ai-modal-body ai-pdf-body'><iframe class='ai-report-iframe ai-pdf-iframe' title='PDF preview'></iframe></div>"
+        + "</div></div>"
+        + "<div class='ai-chatbot-overlay ai-image-overlay' hidden>"
+        + "<div class='ai-chatbot-modal ai-image-modal'>"
+        + "<header class='ai-modal-head'><div class='ai-modal-title-wrap'><h4 class='ai-modal-title'>Ảnh trích dẫn</h4></div><div class='ai-modal-actions'><button type='button' class='ai-modal-close' data-action='close-image'><i class='bi bi-x-lg'></i></button></div></header>"
+        + "<div class='ai-modal-body ai-image-body'><img class='ai-image-preview' alt='Ảnh trích dẫn mở rộng'></div>"
+        + "</div></div>"
+        + "<div class='ai-toast-wrap' aria-live='polite' aria-atomic='true'>"
+        + "<div class='ai-permission-toast' role='status' hidden>"
+        + "<i class='bi bi-exclamation-triangle-fill'></i>"
+        + "<span>Tài khoản chưa có quyền đọc, vui lòng bấm vào mua sách</span>"
+        + "</div>"
+        + "</div>"
         + "</div>"
       );
     }
@@ -344,6 +460,15 @@
       this.citationOverlay = root.querySelector(".ai-citation-overlay");
       this.citationSnippets = root.querySelector(".ai-citation-snippets");
       this.citationPreview = root.querySelector(".ai-citation-preview");
+      this.figOverlay = root.querySelector(".ai-fig-overlay");
+      this.figBody = root.querySelector(".ai-fig-body");
+      this.figFileName = root.querySelector(".ai-fig-file-name");
+      this.pdfOverlay = root.querySelector(".ai-pdf-overlay");
+      this.pdfFrame = root.querySelector(".ai-pdf-iframe");
+      this.imageOverlay = root.querySelector(".ai-image-overlay");
+      this.imagePreview = root.querySelector(".ai-image-preview");
+      this.permissionToast = root.querySelector(".ai-permission-toast");
+      this.permissionToastTimer = null;
     }
 
     bind() {
@@ -365,7 +490,12 @@
         const text = (this.input.value || "").trim();
         if (!text) return;
         this.input.value = "";
+        this.autoResizeComposer();
         this.send(text);
+      });
+
+      this.input.addEventListener("input", () => {
+        this.autoResizeComposer();
       });
 
       this.starters.addEventListener("click", (event) => {
@@ -386,6 +516,30 @@
         if (citationBtn) {
           const hit = this.findCitationResult(citationBtn.getAttribute("data-citation-id"));
           if (hit) this.openCitationPreview(hit);
+          return;
+        }
+
+        const figBtn = event.target.closest("[data-fig-id]");
+        if (figBtn) {
+          this.openFigDetail(figBtn.getAttribute("data-fig-id"));
+          return;
+        }
+
+        const figFileBtn = event.target.closest("[data-action='open-fig-file']");
+        if (figFileBtn) {
+          this.openDisciplinePdfPreview();
+          return;
+        }
+
+        const quoteImageBtn = event.target.closest("[data-quote-image]");
+        if (quoteImageBtn) {
+          this.openQuoteImage(quoteImageBtn.getAttribute("data-quote-image"), quoteImageBtn.getAttribute("data-quote-label"));
+          return;
+        }
+
+        const relatedPdfBtn = event.target.closest("[data-related-pdf]");
+        if (relatedPdfBtn) {
+          this.openDisciplinePdfPreview(relatedPdfBtn.getAttribute("data-related-pdf-name") || "");
         }
       });
 
@@ -439,26 +593,71 @@
         if (action === "open-view") openTab(this.resolveView(this.activeCitationPayload.book));
       });
 
+      this.figOverlay.addEventListener("click", (event) => {
+        if (event.target === this.figOverlay) {
+          this.closeFigDetail();
+          return;
+        }
+        const btn = event.target.closest("[data-action]");
+        if (!btn) return;
+        const action = btn.getAttribute("data-action");
+        if (action === "close-fig") this.closeFigDetail();
+        if (action === "open-fig-file") this.openDisciplinePdfPreview();
+        if (action === "open-fig-origin") this.showOriginPermissionNotice();
+        if (action === "open-fig-buy") openTab(this.resolveBuy(this.config.currentBook || {}));
+      });
+
+      this.pdfOverlay.addEventListener("click", (event) => {
+        if (event.target === this.pdfOverlay) {
+          this.closeDisciplinePdfPreview();
+          return;
+        }
+        const btn = event.target.closest("[data-action]");
+        if (!btn) return;
+        if (btn.getAttribute("data-action") === "close-pdf") {
+          this.closeDisciplinePdfPreview();
+        }
+      });
+
+      this.imageOverlay.addEventListener("click", (event) => {
+        if (event.target === this.imageOverlay) {
+          this.closeQuoteImage();
+          return;
+        }
+        const btn = event.target.closest("[data-action]");
+        if (!btn) return;
+        if (btn.getAttribute("data-action") === "close-image") {
+          this.closeQuoteImage();
+        }
+      });
+
       window.addEventListener("keydown", (event) => {
         if (event.key !== "Escape") return;
         this.closeReport();
         this.closeCitation();
+        this.closeFigDetail();
+        this.closeDisciplinePdfPreview();
+        this.closeQuoteImage();
       });
+
+      this.autoResizeComposer();
+    }
+
+    autoResizeComposer() {
+      if (!this.input) return;
+      this.input.style.height = "auto";
+      const nextHeight = Math.min(this.input.scrollHeight, 180);
+      this.input.style.height = Math.max(42, nextHeight) + "px";
     }
 
     playFabIntroAnimation() {
       if (!this.fab) return;
       const reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
       if (reduceMotion) {
-        this.fab.classList.add("is-intro-done");
+        this.fab.classList.remove("is-attention");
         return;
       }
-
-      this.fab.classList.add("is-intro-playing");
-      window.setTimeout(() => {
-        this.fab.classList.remove("is-intro-playing");
-        this.fab.classList.add("is-intro-done");
-      }, 2800);
+      this.fab.classList.add("is-attention");
     }
 
     async send(text) {
@@ -494,6 +693,17 @@
         this.pushMessage({ role: "bot", type: "citation_result", content: "Kết quả trích dẫn:", meta: { results: response.results || [] } });
         return;
       }
+      if (response.kind === "discipline_demo") {
+        this.activeDisciplinePayload = response.payload || null;
+        this.pushMessage({ role: "bot", type: "text", content: (response.payload && response.payload.intro) || response.text });
+        this.pushMessage({
+          role: "bot",
+          type: "discipline_result",
+          content: "Kết quả trích dẫn chuyên sâu:",
+          meta: { payload: response.payload || null }
+        });
+        return;
+      }
       this.pushMessage({ role: "bot", type: "text", content: response.text || "Mình đã nhận yêu cầu." });
     }
 
@@ -508,6 +718,7 @@
       };
       this.messages.push(message);
       this.empty.classList.add("is-hidden");
+      if (this.starters) this.starters.classList.add("is-hidden");
       this.renderMessage(message);
       this.thread.scrollTop = this.thread.scrollHeight;
     }
@@ -517,7 +728,12 @@
       node.className = "ai-msg " + (message.role === "user" ? "ai-msg-user" : "ai-msg-bot");
 
       if (message.type === "text") {
-        node.innerHTML = "<div class='ai-msg-bubble'>" + esc(message.content) + "</div>";
+        if (message.role === "user") {
+          node.classList.add("ai-msg-user-query");
+          node.innerHTML = "<span class='ai-msg-avatar'><i class='bi bi-person-circle'></i></span><div class='ai-msg-bubble'>" + esc(message.content) + "</div>";
+        } else {
+          node.innerHTML = "<div class='ai-msg-bubble'>" + esc(message.content) + "</div>";
+        }
       } else if (message.type === "file") {
         const fileButtons = ((message.meta && message.meta.files) || []).map(function (file) {
           return "<button type='button' class='ai-file-chip' data-file-id='" + esc(file.id) + "'>"
@@ -529,15 +745,103 @@
           return "<button type='button' class='ai-citation-item' data-citation-id='" + esc(row.citationId) + "'><strong>\"" + esc(row.quote) + "\"</strong><small>" + esc(row.bookTitle) + " • " + esc(row.chapter) + "</small></button>";
         }).join("");
         node.innerHTML = "<div class='ai-msg-bubble'><p>" + esc(message.content) + "</p><div class='ai-citation-list'>" + resultButtons + "</div></div>";
+      } else if (message.type === "discipline_result") {
+        node.innerHTML = this.renderDisciplineResult(message.meta && message.meta.payload);
       }
       this.thread.appendChild(node);
     }
 
+    renderDisciplineResult(payload) {
+      if (!payload) {
+        return "<div class='ai-msg-bubble'><p>Không có dữ liệu demo.</p></div>";
+      }
+
+      const sectionsHtml = (payload.sections || []).map(function (section) {
+        const paragraphs = (section.paragraphs || []).map(function (paragraph) {
+          return "<p>" + paragraph.replace(/(Fig\.? ?\d+)/g, function (match) {
+            const figId = "fig-" + match.replace(/[^0-9]/g, "");
+            return "<button type='button' class='ai-inline-fig' data-fig-id='" + esc(figId) + "'>" + esc(match) + "</button>";
+          }) + "</p>";
+        }).join("");
+        return "<section class='ai-discipline-section'><h5>" + esc(section.title) + "</h5>" + paragraphs + "</section>";
+      }).join("");
+
+      const figureHtml = (payload.figures || []).map(function (figure) {
+        return "<button type='button' class='ai-figure-card ai-figure-card-btn' data-fig-id='" + esc(figure.id) + "'>"
+          + "<span class='ai-figure-badge'>" + esc(figure.label) + "</span>"
+          + "<p>" + esc(figure.caption) + "</p>"
+          + "</button>";
+      }).join("");
+
+      const quoteImagesHtml = (payload.quoteImages || []).map(function (img) {
+        return "<button type='button' class='ai-quote-image-card' data-quote-image='" + esc(img.src) + "' data-quote-label='" + esc(img.label || "Ảnh trích dẫn") + "'>"
+          + "<img src='" + esc(img.src) + "' alt='" + esc(img.label || "Ảnh trích dẫn") + "'>"
+          + "<span>" + esc(img.label || "Ảnh trích dẫn") + "</span>"
+          + "</button>";
+      }).join("");
+
+      return "<div class='ai-msg-bubble ai-knowledge-card'>"
+        + "<h4 class='ai-knowledge-title'>Kết quả trích dẫn theo tài liệu tham chiếu</h4>"
+        + sectionsHtml
+        + "<div class='ai-figure-grid'>" + figureHtml + "</div>"
+        + "<h5 class='ai-quote-title'>Ảnh trích dẫn được highlight</h5>"
+        + "<div class='ai-quote-image-grid'>" + quoteImagesHtml + "</div>"
+        + "</div>";
+    }
+
+    renderDisciplineResult(payload) {
+      if (!payload) {
+        return "<div class='ai-msg-bubble'><p>Không có dữ liệu demo.</p></div>";
+      }
+
+      const sectionsHtml = (payload.sections || []).map(function (section) {
+        const paragraphs = (section.paragraphs || []).map(function (paragraph) {
+          return "<p>" + paragraph.replace(/(Fig\.? ?\d+)/g, function (match) {
+            const figId = "fig-" + match.replace(/[^0-9]/g, "");
+            return "<button type='button' class='ai-inline-fig' data-fig-id='" + esc(figId) + "'>" + esc(match) + "</button>";
+          }) + "</p>";
+        }).join("");
+        return "<section class='ai-discipline-section'><h5>" + esc(section.title) + "</h5>" + paragraphs + "</section>";
+      }).join("");
+
+      const figureHtml = (payload.figures || []).map(function (figure) {
+        return "<button type='button' class='ai-figure-card ai-figure-card-btn' data-fig-id='" + esc(figure.id) + "'>"
+          + "<span class='ai-figure-badge'>" + esc(figure.label) + "</span>"
+          + "<p>" + esc(figure.caption) + "</p>"
+          + "</button>";
+      }).join("");
+
+      const quoteImagesHtml = (payload.quoteImages || []).map(function (img) {
+        return "<button type='button' class='ai-quote-image-card' data-quote-image='" + esc(img.src) + "' data-quote-label='" + esc(img.label || "Ảnh trích dẫn") + "'>"
+          + "<img src='" + esc(img.src) + "' alt='" + esc(img.label || "Ảnh trích dẫn") + "'>"
+          + "<span>" + esc(img.label || "Ảnh trích dẫn") + "</span>"
+          + "</button>";
+      }).join("");
+
+      const relatedPdfHtml = (payload.relatedPdfFiles || []).map(function (file) {
+        return "<button type='button' class='ai-source-file-chip ai-related-pdf-chip' data-related-pdf='" + esc(file.id || "") + "' data-related-pdf-name='" + esc(file.name || "") + "'>"
+          + "<img src='assets/img/PDF_file_icon.svg' alt='PDF icon'>"
+          + "<span>" + esc(file.name || "Tài liệu liên quan.pdf") + "</span>"
+          + "</button>";
+      }).join("");
+
+      return "<div class='ai-msg-bubble ai-knowledge-card'>"
+        + "<h4 class='ai-knowledge-title'>Kết quả trích dẫn theo tài liệu tham chiếu</h4>"
+        + sectionsHtml
+        + "<div class='ai-figure-grid'>" + figureHtml + "</div>"
+        + "<h5 class='ai-quote-title'>Ảnh trích dẫn được highlight</h5>"
+        + "<div class='ai-quote-image-grid'>" + quoteImagesHtml + "</div>"
+        + "<h5 class='ai-quote-title'>PDF sách liên quan</h5>"
+        + "<div class='ai-related-pdf-list'>" + relatedPdfHtml + "</div>"
+        + "</div>";
+    }
+
     showTyping() {
+      if (this.thread.querySelector("[data-typing='1']")) return;
       const typing = document.createElement("div");
-      typing.className = "ai-msg ai-msg-bot ai-msg-typing";
+      typing.className = "ai-msg ai-msg-bot ai-msg-status";
       typing.setAttribute("data-typing", "1");
-      typing.innerHTML = "<span></span><span></span><span></span>";
+      typing.innerHTML = "<div class='ai-msg-bubble'>Hệ thống đang kiểm tra dữ liệu, bạn vui lòng chờ giây lát...</div>";
       this.thread.appendChild(typing);
       this.thread.scrollTop = this.thread.scrollHeight;
     }
@@ -565,7 +869,7 @@
       this.emailStatus.textContent = "";
       this.renderReportPreviewContent(fileMeta);
       this.reportOverlay.removeAttribute("hidden");
-      document.body.classList.add("ai-chatbot-lock-scroll");
+      this.updateBodyScrollLock();
     }
 
     renderReportPreviewContent(fileMeta) {
@@ -617,7 +921,7 @@
 
     closeReport() {
       this.reportOverlay.setAttribute("hidden", "");
-      if (this.citationOverlay.hasAttribute("hidden")) document.body.classList.remove("ai-chatbot-lock-scroll");
+      this.updateBodyScrollLock();
     }
 
     downloadReport() {
@@ -658,7 +962,7 @@
       };
       this.renderCitationPopup();
       this.citationOverlay.removeAttribute("hidden");
-      document.body.classList.add("ai-chatbot-lock-scroll");
+      this.updateBodyScrollLock();
     }
 
     renderCitationPopup() {
@@ -691,7 +995,100 @@
 
     closeCitation() {
       this.citationOverlay.setAttribute("hidden", "");
-      if (this.reportOverlay.hasAttribute("hidden")) document.body.classList.remove("ai-chatbot-lock-scroll");
+      this.updateBodyScrollLock();
+    }
+
+    openFigDetail(figId) {
+      if (!this.activeDisciplinePayload) return;
+      const payload = this.activeDisciplinePayload;
+      const figure = this.disciplineDemoService.resolveFigure(payload, figId) || payload.figureDetails["fig-115"];
+      if (!figure) return;
+
+      const linesHtml = (figure.lines || []).map(function (line) {
+        return "<p>" + esc(line) + "</p>";
+      }).join("");
+
+      this.figBody.innerHTML = "<div class='ai-fig-content'>" + linesHtml + "</div>";
+      this.figFileName.textContent = payload.fileName || "Tài liệu tham chiếu.pdf";
+      this.figOverlay.removeAttribute("hidden");
+      this.updateBodyScrollLock();
+    }
+
+    closeFigDetail() {
+      this.figOverlay.setAttribute("hidden", "");
+      this.updateBodyScrollLock();
+    }
+
+    ensureDisciplinePdf() {
+      if (this.disciplinePdfFile) return this.disciplinePdfFile;
+      if (!this.activeDisciplinePayload) return null;
+      const lines = ["Hoi - dap ve xu ly vi pham ky luat cua Dang", ""];
+      const fig = this.activeDisciplinePayload.figureDetails["fig-115"];
+      (fig && fig.lines ? fig.lines : []).forEach(function (line) { lines.push(stripDiacritics(line)); });
+      const blob = this.reportService.minimalPdfBlob(lines);
+      this.disciplinePdfFile = {
+        id: uid("file"),
+        name: this.activeDisciplinePayload.fileName || "tai-lieu-tham-chieu.pdf",
+        format: "pdf",
+        blobUrl: URL.createObjectURL(blob),
+        title: "Document Previewer"
+      };
+      return this.disciplinePdfFile;
+    }
+
+    openDisciplinePdfPreview(fileNameOverride) {
+      const fileMeta = this.ensureDisciplinePdf();
+      if (!fileMeta) return;
+      if (fileNameOverride) {
+        fileMeta.name = fileNameOverride;
+      }
+      this.pdfFrame.setAttribute("src", fileMeta.blobUrl);
+      this.pdfOverlay.removeAttribute("hidden");
+      this.updateBodyScrollLock();
+    }
+
+    closeDisciplinePdfPreview() {
+      this.pdfOverlay.setAttribute("hidden", "");
+      this.updateBodyScrollLock();
+    }
+
+    showOriginPermissionNotice() {
+      if (!this.permissionToast) {
+        window.alert("Tài khoản chưa có quyền đọc, vui lòng bấm vào mua sách");
+        return;
+      }
+      this.permissionToast.removeAttribute("hidden");
+      this.permissionToast.classList.add("is-show");
+      if (this.permissionToastTimer) {
+        window.clearTimeout(this.permissionToastTimer);
+      }
+      this.permissionToastTimer = window.setTimeout(() => {
+        this.permissionToast.classList.remove("is-show");
+        this.permissionToast.setAttribute("hidden", "");
+      }, 2600);
+    }
+
+    openQuoteImage(src, label) {
+      if (!src || !this.imagePreview) return;
+      this.imagePreview.setAttribute("src", src);
+      this.imagePreview.setAttribute("alt", label || "Ảnh trích dẫn mở rộng");
+      this.imageOverlay.removeAttribute("hidden");
+      this.updateBodyScrollLock();
+    }
+
+    closeQuoteImage() {
+      if (!this.imageOverlay || !this.imagePreview) return;
+      this.imageOverlay.setAttribute("hidden", "");
+      this.imagePreview.removeAttribute("src");
+      this.updateBodyScrollLock();
+    }
+
+    updateBodyScrollLock() {
+      const overlays = [this.reportOverlay, this.citationOverlay, this.figOverlay, this.pdfOverlay, this.imageOverlay];
+      const hasOpenOverlay = overlays.some(function (overlay) {
+        return overlay && !overlay.hasAttribute("hidden");
+      });
+      document.body.classList.toggle("ai-chatbot-lock-scroll", hasOpenOverlay);
     }
 
     resolveDetail(bookMeta) { return this.config.routes.detail(bookMeta || {}); }
