@@ -112,6 +112,7 @@
   class DisciplineDemoService {
     buildPayload() {
       return {
+        demoType: "citation",
         fileName: "Hỏi - đáp về xử lý vi phạm kỷ luật của Đảng (Xuất bản lần thứ hai).pdf",
         intro: "Dưới đây là tóm tắt nội dung cơ sở kiến thức được cung cấp:",
         sections: [
@@ -196,6 +197,8 @@
 
     buildReportPayload() {
       return {
+        demoType: "report",
+        reportTitle: "Báo cáo chuyên môn tổng hợp từ dữ liệu sách bản quyền",
         fileName: "Ebook Tư duy hệ thống.pdf",
         intro: "Dưới đây là tóm tắt ngắn gọn nội dung từ cơ sở kiến thức:",
         sections: [
@@ -454,6 +457,7 @@
       this.activeCitationPayload = null;
       this.activeDisciplinePayload = null;
       this.disciplinePdfFile = null;
+      this.sourceReportDocxFile = null;
       this.currentPreviewFile = null;
     }
 
@@ -622,6 +626,12 @@
         const relatedPdfBtn = event.target.closest("[data-related-pdf]");
         if (relatedPdfBtn) {
           this.openDisciplinePdfPreview(relatedPdfBtn.getAttribute("data-related-pdf-name") || "");
+          return;
+        }
+
+        const reportAttachBtn = event.target.closest("[data-action='open-source-report']");
+        if (reportAttachBtn) {
+          this.openSourceReportPreview();
         }
       });
 
@@ -777,6 +787,8 @@
       }
       if (response.kind === "discipline_demo") {
         this.activeDisciplinePayload = response.payload || null;
+        this.disciplinePdfFile = null;
+        this.sourceReportDocxFile = null;
         this.pushMessage({ role: "bot", type: "text", content: (response.payload && response.payload.intro) || response.text });
         this.pushMessage({
           role: "bot",
@@ -907,6 +919,10 @@
           + "</button>";
       }).join("");
 
+      const reportAttachmentHtml = payload.demoType === "report"
+        ? "<button type='button' class='ai-report-cta-chip' data-action='open-source-report'><i class='bi bi-file-earmark-word-fill'></i><span>Bấm vào để xem báo cáo</span></button>"
+        : "";
+
       return "<div class='ai-msg-bubble ai-knowledge-card'>"
         + "<h4 class='ai-knowledge-title'>Kết quả trích dẫn theo tài liệu tham chiếu</h4>"
         + sectionsHtml
@@ -915,6 +931,7 @@
         + "<div class='ai-quote-image-grid'>" + quoteImagesHtml + "</div>"
         + "<h5 class='ai-quote-title'>PDF sách liên quan</h5>"
         + "<div class='ai-related-pdf-list'>" + relatedPdfHtml + "</div>"
+        + reportAttachmentHtml
         + "</div>";
     }
 
@@ -989,6 +1006,53 @@
         this.currentPreviewFile = docxFile;
         this.renderReportPreviewContent(docxFile);
       }
+    }
+
+    createSourceReportDocxFile() {
+      if (this.sourceReportDocxFile) return this.sourceReportDocxFile;
+      const payload = this.activeDisciplinePayload;
+      if (!payload || payload.demoType !== "report") return null;
+      const exportPayload = {
+        reportId: uid("report"),
+        title: payload.reportTitle || "Báo cáo chuyên môn tổng hợp từ dữ liệu sách bản quyền",
+        subtitle: "Nguồn tham chiếu: " + (payload.fileName || "Kho dữ liệu sách bản quyền"),
+        createdAt: new Date().toLocaleDateString("vi-VN"),
+        prompt: "Báo cáo từ dữ liệu sách bản quyền",
+        sections: (payload.sections || []).map(function (section) {
+          return {
+            heading: section.title || "Nội dung",
+            paragraphs: section.paragraphs || []
+          };
+        })
+      };
+      const docx = this.reportService.createDocx(exportPayload);
+      docx.name = "bao-cao-chuyen-mon.docx";
+      docx.title = exportPayload.title;
+      docx.previewHtml = this.buildSourceReportPreviewHtml(exportPayload);
+      this.fileStore.set(docx.id, docx);
+      this.sourceReportDocxFile = docx;
+      return docx;
+    }
+
+    buildSourceReportPreviewHtml(payload) {
+      const sections = (payload.sections || []).map(function (section) {
+        const paragraphs = (section.paragraphs || []).map(function (text) {
+          return "<p>" + esc(String(text || "").replace(/ ?Fig\\.? ?\\d+/g, "")) + "</p>";
+        }).join("");
+        return "<section><h4>" + esc(section.heading || "") + "</h4>" + paragraphs + "</section>";
+      }).join("");
+      return "<article class='ai-preview-doc ai-source-report-doc'>"
+        + "<h2>" + esc(payload.title || "Báo cáo") + "</h2>"
+        + "<p class='ai-preview-sub'>" + esc(payload.subtitle || "") + "</p>"
+        + "<p class='ai-preview-date'>Ngày tạo: " + esc(payload.createdAt || "") + "</p>"
+        + sections
+        + "</article>";
+    }
+
+    openSourceReportPreview() {
+      const file = this.createSourceReportDocxFile();
+      if (!file) return;
+      this.openReportPreview(file);
     }
 
     findReportFile(reportId, format) {
@@ -1143,11 +1207,14 @@
       this.updateBodyScrollLock();
     }
 
-    showOriginPermissionNotice() {
+    showOriginPermissionNotice(message) {
+      const text = message || "Tài khoản chưa có quyền đọc, vui lòng bấm vào mua sách";
       if (!this.permissionToast) {
-        window.alert("Tài khoản chưa có quyền đọc, vui lòng bấm vào mua sách");
+        window.alert(text);
         return;
       }
+      const textNode = this.permissionToast.querySelector("span");
+      if (textNode) textNode.textContent = text;
       this.permissionToast.removeAttribute("hidden");
       this.permissionToast.classList.add("is-show");
       if (this.permissionToastTimer) {

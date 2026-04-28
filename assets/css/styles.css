@@ -4242,6 +4242,33 @@ img.lazy-image:not([data-src]) {
     font-size: 16px;
     margin-top: -2px;
   }
+
+  /* Detail mobile: unify body typography for easier reading */
+  .detail-page-v2 .bd-product-card p,
+  .detail-page-v2 .bd-product-card span,
+  .detail-page-v2 .bd-product-card strong,
+  .detail-page-v2 .bd-product-card li,
+  .detail-page-v2 .bd-product-card a,
+  .detail-page-v2 .bd-product-card button,
+  .detail-page-v2 .bd-secondary-main p,
+  .detail-page-v2 .bd-secondary-main span,
+  .detail-page-v2 .bd-secondary-main strong,
+  .detail-page-v2 .bd-secondary-main li,
+  .detail-page-v2 .bd-secondary-main a,
+  .detail-page-v2 .bd-secondary-main button,
+  .detail-page-v2 .bd-secondary-side p,
+  .detail-page-v2 .bd-secondary-side span,
+  .detail-page-v2 .bd-secondary-side strong,
+  .detail-page-v2 .bd-secondary-side li,
+  .detail-page-v2 .bd-secondary-side a,
+  .detail-page-v2 .bd-secondary-side button,
+  .detail-page-v2 .bd-comment-card p,
+  .detail-page-v2 .bd-comment-card span,
+  .detail-page-v2 .bd-comment-card strong,
+  .detail-page-v2 .bd-comment-card a {
+    font-size: 16px !important;
+    line-height: 1.55;
+  }
 }
 
 @media (max-width: 480px) {
@@ -4260,14 +4287,15 @@ img.lazy-image:not([data-src]) {
   }
 
   .detail-page-v2 .bd-info-row {
-    grid-template-columns: 116px minmax(0, 1fr);
+    grid-template-columns: minmax(132px, 42%) minmax(0, 1fr);
     gap: 6px;
     padding: 9px 10px;
     align-items: start;
   }
 
   .detail-page-v2 .bd-info-row strong {
-    white-space: nowrap;
+    white-space: normal;
+    align-items: flex-start;
   }
 
   .detail-page-v2 .bd-select-control,
@@ -5075,6 +5103,34 @@ img.lazy-image:not([data-src]) {
   text-align: left;
 }
 
+.ai-report-cta-chip {
+  margin-top: 14px;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(37, 99, 235, 0.1);
+  color: #2563eb;
+  padding: 10px 18px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  width: fit-content;
+  max-width: 100%;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.ai-report-cta-chip i {
+  font-size: 20px;
+  line-height: 1;
+}
+
+.ai-report-cta-chip:hover {
+  background: rgba(37, 99, 235, 0.16);
+}
+
 .ai-knowledge-source {
   display: inline-flex;
   align-items: center;
@@ -5115,6 +5171,53 @@ img.lazy-image:not([data-src]) {
 }
 
 .ai-fig-content p:last-child {
+  margin-bottom: 0;
+}
+
+.ai-report-draft {
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 22px 20px;
+  max-height: min(62vh, 680px);
+  overflow: auto;
+  background: #fff;
+  font-family: "Times New Roman", Times, serif;
+  color: #111827;
+}
+
+.ai-report-draft h4 {
+  margin: 0 0 10px;
+  font-size: 28px;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.ai-report-draft-meta {
+  margin: 0 0 18px;
+  font-size: 18px;
+  line-height: 1.45;
+  color: #374151;
+  font-style: italic;
+}
+
+.ai-report-draft-section + .ai-report-draft-section {
+  margin-top: 16px;
+}
+
+.ai-report-draft-section h5 {
+  margin: 0 0 8px;
+  font-size: 23px;
+  line-height: 1.3;
+  font-weight: 700;
+}
+
+.ai-report-draft-section p {
+  margin: 0 0 8px;
+  font-size: 21px;
+  line-height: 1.6;
+}
+
+.ai-report-draft-section p:last-child {
   margin-bottom: 0;
 }
 
@@ -5165,6 +5268,10 @@ img.lazy-image:not([data-src]) {
   align-items: center;
   gap: 8px;
   flex-shrink: 0;
+}
+
+.ai-fig-actions[hidden] {
+  display: none !important;
 }
 
 .ai-pdf-modal {
@@ -5294,6 +5401,41 @@ img.lazy-image:not([data-src]) {
   color: #111827;
 }
 
+.ai-modal-action {
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, transform 0.12s ease;
+}
+
+.ai-modal-action[data-action="download-report"] {
+  background: #2563eb;
+  border-color: #2563eb;
+  color: #fff;
+}
+
+.ai-modal-action[data-action="download-report"]:hover {
+  background: #1d4ed8;
+  border-color: #1d4ed8;
+  box-shadow: 0 6px 14px rgba(37, 99, 235, 0.28);
+}
+
+.ai-modal-action[data-action="toggle-email"] {
+  background: #0ea567;
+  border-color: #0ea567;
+  color: #fff;
+}
+
+.ai-modal-action[data-action="toggle-email"]:hover {
+  background: #0b8a56;
+  border-color: #0b8a56;
+  box-shadow: 0 6px 14px rgba(14, 165, 103, 0.28);
+}
+
+.ai-modal-action:active {
+  transform: translateY(1px) scale(0.98);
+  box-shadow: none;
+}
+
 .ai-modal-close {
   width: 36px;
   height: 36px;
@@ -5326,6 +5468,18 @@ img.lazy-image:not([data-src]) {
   color: #fff;
   border-radius: 10px;
   padding: 8px 12px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.12s ease;
+}
+
+.ai-email-send:hover {
+  background: #0b59cf;
+  box-shadow: 0 6px 14px rgba(15, 108, 246, 0.24);
+}
+
+.ai-email-send:active {
+  transform: translateY(1px) scale(0.98);
+  box-shadow: none;
 }
 
 .ai-email-status {
@@ -5395,6 +5549,36 @@ img.lazy-image:not([data-src]) {
   font-size: 14px;
   color: #111827;
   line-height: 1.45;
+}
+
+.ai-preview-doc.ai-source-report-doc {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 18px;
+  line-height: 1.65;
+  padding: 26px 32px;
+}
+
+.ai-preview-doc.ai-source-report-doc h2 {
+  font-size: 34px;
+  line-height: 1.22;
+}
+
+.ai-preview-doc.ai-source-report-doc .ai-preview-sub,
+.ai-preview-doc.ai-source-report-doc .ai-preview-date {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 18px;
+}
+
+.ai-preview-doc.ai-source-report-doc h4 {
+  font-size: 24px;
+  margin-top: 18px;
+  margin-bottom: 10px;
+}
+
+.ai-preview-doc.ai-source-report-doc p {
+  font-size: 21px;
+  line-height: 1.75;
+  margin-bottom: 14px;
 }
 
 .ai-report-iframe {
@@ -5524,13 +5708,21 @@ img.lazy-image:not([data-src]) {
 
   .ai-chatbot-panel {
     left: 8px;
+    right: 8px;
     width: auto;
-    height: min(72vh, 620px);
+    height: min(72dvh, 620px);
     border-radius: 18px;
   }
 
   .ai-chatbot-panel.is-expanded {
+    left: 8px;
+    right: 8px;
+    top: max(8px, env(safe-area-inset-top));
+    bottom: max(8px, env(safe-area-inset-bottom));
     width: auto;
+    height: auto;
+    max-height: none;
+    border-radius: 18px;
   }
 
   .ai-chatbot-title strong {
@@ -5567,6 +5759,22 @@ img.lazy-image:not([data-src]) {
 
   .ai-fig-content p {
     font-size: 16px;
+  }
+
+  .ai-report-draft h4 {
+    font-size: 22px;
+  }
+
+  .ai-report-draft-meta {
+    font-size: 16px;
+  }
+
+  .ai-report-draft-section h5 {
+    font-size: 19px;
+  }
+
+  .ai-report-draft-section p {
+    font-size: 18px;
   }
 
   .ai-fig-footer {
