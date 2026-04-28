@@ -194,6 +194,69 @@
       };
     }
 
+    buildReportPayload() {
+      return {
+        fileName: "Ebook Tư duy hệ thống.pdf",
+        intro: "Dưới đây là tóm tắt ngắn gọn nội dung từ cơ sở kiến thức:",
+        sections: [
+          {
+            title: "Tổng quan nội dung",
+            paragraphs: [
+              "Tài liệu “Ebook Tư duy hệ thống.pdf” nhấn mạnh doanh nghiệp cần được nhìn nhận như một hệ thống gồm nhiều thành phần phối hợp để đạt mục tiêu chung Fig. 254.",
+              "Mỗi quyết định cục bộ có thể tạo vòng lặp hệ quả mới, vì vậy cần tiếp cận theo quan hệ nguyên nhân - kết quả thay vì xử lý đơn điểm Fig. 457."
+            ]
+          },
+          {
+            title: "5 nguyên tắc cốt lõi giúp nhận diện điểm nghẽn",
+            paragraphs: [
+              "1) Xác định mục tiêu hệ thống và các chỉ số thành công chung Fig. 16.",
+              "2) Mô tả vòng lặp phản hồi gây tắc nghẽn giữa quy trình, nhân sự và dữ liệu Fig. 145.",
+              "3) Ưu tiên điểm đòn bẩy thay vì xử lý bề mặt triệu chứng Fig. 220.",
+              "4) Thiết kế cơ chế phối hợp liên phòng ban để giảm xung đột cục bộ Fig. 221.",
+              "5) Duy trì đo lường định kỳ và điều chỉnh theo biến động thực tế Fig. 495."
+            ]
+          },
+          {
+            title: "Đề xuất sơ đồ quy trình theo góc nhìn hệ thống",
+            paragraphs: [
+              "Bước 1: Xác định đầu vào, đầu ra và người chịu trách nhiệm cho từng chặng công việc Fig. 16.",
+              "Bước 2: Lập bản đồ phụ thuộc giữa các bộ phận để phát hiện giao điểm gây trễ Fig. 145.",
+              "Bước 3: Chọn 1-2 điểm đòn bẩy để thử nghiệm cải tiến trong chu kỳ ngắn Fig. 220.",
+              "Bước 4: Chuẩn hóa cơ chế phản hồi và nhân rộng cải tiến hiệu quả Fig. 221."
+            ]
+          }
+        ],
+        figures: [
+          { id: "fig-16", label: "Fig. 16", caption: "Mục tiêu và phạm vi hệ thống" },
+          { id: "fig-145", label: "Fig. 145", caption: "Bản đồ phụ thuộc liên phòng ban" },
+          { id: "fig-220", label: "Fig. 220", caption: "Điểm đòn bẩy ưu tiên" },
+          { id: "fig-221", label: "Fig. 221", caption: "Cơ chế phản hồi liên tục" },
+          { id: "fig-495", label: "Fig. 495", caption: "Đánh giá hiệu quả cải tiến" }
+        ],
+        quoteImages: [
+          { id: "report-quote-1", label: "Fig. 16", src: "assets/img/Fig. 16.jpg" },
+          { id: "report-quote-2", label: "Fig. 145", src: "assets/img/Fig. 145.jpg" },
+          { id: "report-quote-3", label: "Fig. 220", src: "assets/img/Fig. 220.jpg" },
+          { id: "report-quote-4", label: "Fig. 221", src: "assets/img/Fig. 221.jpg" },
+          { id: "report-quote-5", label: "Fig. 495", src: "assets/img/Fig. 495.jpg" }
+        ],
+        relatedPdfFiles: [
+          { id: "r-pdf-1", name: "BAO VE NEN T...x24).pdf" },
+          { id: "r-pdf-2", name: "Dac khu kinh te.pdf" },
+          { id: "r-pdf-3", name: "Ebook Tư duy...hống.pdf" }
+        ],
+        figureDetails: {
+          "fig-16": {
+            title: "Fig. 16",
+            lines: [
+              "Nguyên tắc 1: Xác định mục tiêu hệ thống rõ ràng và thống nhất giữa các bộ phận.",
+              "Nguyên tắc 2: Theo dõi tác động chéo giữa các phòng ban trong cùng chuỗi giá trị."
+            ]
+          }
+        }
+      };
+    }
+
     resolveFigure(payload, figId) {
       if (!payload || !figId) return null;
       return payload.figureDetails[figId] || null;
@@ -322,13 +385,29 @@
     async respond(text) {
       const normalized = norm(text);
       await new Promise(function (resolve) { window.setTimeout(resolve, 520); });
-      const isDisciplineStarter = normalized.indexOf("trich dan ve mot noi dung") > -1;
+      const isReportStarter =
+        normalized.indexOf("bao cao") > -1 ||
+        normalized.indexOf("lap bao cao") > -1 ||
+        normalized.indexOf("viet bao cao") > -1 ||
+        normalized.indexOf("report") > -1;
+      const isDisciplineStarter =
+        normalized.indexOf("trich dan ve mot noi dung") > -1 ||
+        normalized.indexOf("trich dan") > -1 ||
+        normalized.indexOf("quote") > -1 ||
+        normalized.indexOf("trich") > -1;
       const isDisciplineQuestion =
         normalized.indexOf("ky luat") > -1 &&
         (normalized.indexOf("dang vien") > -1 ||
           normalized.indexOf("phat ngon") > -1 ||
           normalized.indexOf("lap truong tu tuong") > -1);
 
+      if (isReportStarter) {
+        return {
+          kind: "discipline_demo",
+          text: "Mình đã tổng hợp nội dung báo cáo từ kho dữ liệu sách bản quyền. Bạn có thể bấm vào Fig để xem chi tiết.",
+          payload: this.ctx.disciplineDemoService.buildReportPayload()
+        };
+      }
       if (isDisciplineStarter || isDisciplineQuestion) {
         return {
           kind: "discipline_demo",
@@ -336,11 +415,14 @@
           payload: this.ctx.disciplineDemoService.buildPayload()
         };
       }
-      if (normalized.indexOf("bao cao") > -1 || normalized.indexOf("report") > -1) {
-        const payload = this.ctx.reportService.buildPayload(text, this.ctx.config.currentBook);
-        return { kind: "report", text: "Mình đã soạn xong báo cáo chuyên môn. Bạn mở file DOCX ngay bên dưới.", payload: payload };
+      if (false && (normalized.indexOf("bao cao") > -1 || normalized.indexOf("report") > -1)) {
+        return {
+          kind: "discipline_demo",
+          text: "Mình đã tổng hợp nội dung báo cáo từ kho dữ liệu sách bản quyền. Bạn có thể bấm vào Fig để xem chi tiết.",
+          payload: this.ctx.disciplineDemoService.buildReportPayload()
+        };
       }
-      if (normalized.indexOf("trich dan") > -1 || normalized.indexOf("quote") > -1 || normalized.indexOf("trich") > -1) {
+      if (false && (normalized.indexOf("trich dan") > -1 || normalized.indexOf("quote") > -1 || normalized.indexOf("trich") > -1)) {
         return {
           kind: "citation_search",
           text: "Mình tìm được các trích dẫn liên quan trong kho xuất bản. Bấm vào từng kết quả để xem popup chi tiết.",
@@ -751,7 +833,7 @@
       this.thread.appendChild(node);
     }
 
-    renderDisciplineResult(payload) {
+    renderDisciplineResultLegacy(payload) {
       if (!payload) {
         return "<div class='ai-msg-bubble'><p>Không có dữ liệu demo.</p></div>";
       }
@@ -1001,7 +1083,12 @@
     openFigDetail(figId) {
       if (!this.activeDisciplinePayload) return;
       const payload = this.activeDisciplinePayload;
-      const figure = this.disciplineDemoService.resolveFigure(payload, figId) || payload.figureDetails["fig-115"];
+      const figureDetails = payload.figureDetails || {};
+      const fallbackFigure =
+        figureDetails["fig-115"] ||
+        figureDetails["fig-16"] ||
+        figureDetails[Object.keys(figureDetails)[0]];
+      const figure = this.disciplineDemoService.resolveFigure(payload, figId) || fallbackFigure;
       if (!figure) return;
 
       const linesHtml = (figure.lines || []).map(function (line) {
@@ -1023,7 +1110,11 @@
       if (this.disciplinePdfFile) return this.disciplinePdfFile;
       if (!this.activeDisciplinePayload) return null;
       const lines = ["Hoi - dap ve xu ly vi pham ky luat cua Dang", ""];
-      const fig = this.activeDisciplinePayload.figureDetails["fig-115"];
+      const figureDetails = this.activeDisciplinePayload.figureDetails || {};
+      const fig =
+        figureDetails["fig-115"] ||
+        figureDetails["fig-16"] ||
+        figureDetails[Object.keys(figureDetails)[0]];
       (fig && fig.lines ? fig.lines : []).forEach(function (line) { lines.push(stripDiacritics(line)); });
       const blob = this.reportService.minimalPdfBlob(lines);
       this.disciplinePdfFile = {
