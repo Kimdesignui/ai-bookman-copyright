@@ -6155,4 +6155,104 @@ img.lazy-image:not([data-src]) {
   .detail-page-v2 .bd-gallery-nav-next {
     right: 8px;
   }
+
+  .detail-page-v2 .bd-quick-action,
+  .detail-page-v2 .bd-btn {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    font-size: 14px;
+    line-height: 1.35;
+  }
+
+  .detail-page-v2 .bd-variant-card {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .detail-page-v2 .bd-variant-row {
+    padding: 8px 8px;
+    grid-template-columns: minmax(0, 1fr) 30px;
+    column-gap: 6px;
+  }
+
+  .detail-page-v2 .bd-variant-left,
+  .detail-page-v2 .bd-variant-row.active .bd-variant-left {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: none;
+    gap: 6px;
+  }
+
+  .detail-page-v2 .bd-variant-label {
+    width: auto !important;
+    min-width: 0;
+    white-space: normal;
+    font-size: 15px;
+  }
+
+  .detail-page-v2 .bd-select-control,
+  .detail-page-v2 .bd-qty-control,
+  .detail-page-v2 .bd-qty-control[data-variant-id],
+  .detail-page-v2 .bd-select-control[data-variant-id] {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .detail-page-v2 .bd-qty-control {
+    justify-content: center;
+  }
+
+  .detail-page-v2 .bd-qty-control button {
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+  }
+
+  .detail-page-v2 .bd-qty-control input {
+    width: 34px;
+    height: 30px;
+    font-size: 13px;
+  }
+
+  .detail-page-v2 .bd-variant-row .bd-variant-price-group,
+  .detail-page-v2 .bd-variant-row.active .bd-variant-price-group {
+    justify-self: start;
+    width: 100%;
+    min-width: 0;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+
+  .detail-page-v2 .bd-variant-row .bd-variant-price-group strong {
+    font-size: 15px;
+    line-height: 1.2;
+  }
+
+  .detail-page-v2 .bd-old-price {
+    font-size: 11px;
+  }
+
+  .detail-page-v2 .bd-comment-card,
+  .detail-page-v2 .bd-comment-list,
+  .detail-page-v2 .bd-comment-form,
+  .detail-page-v2 .bd-comment-parent,
+  .detail-page-v2 .bd-comment-body,
+  .detail-page-v2 .bd-comment-reply {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .detail-page-v2 .bd-comment-actions,
+  .detail-page-v2 .bd-comment-reply-head {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 6px;
+  }
+
+  .detail-page-v2 .bd-comment-form button {
+    justify-self: stretch;
+    width: 100%;
+  }
 }
