@@ -120,6 +120,7 @@
       const dropdown = bootstrap.Dropdown.getOrCreateInstance(toggle, { autoClose: true });
       const toggleIcon = toggle.querySelector("i");
       const canHover = window.matchMedia("(hover: hover)").matches;
+      const isMobileMenu = window.matchMedia("(max-width: 900px)").matches;
       let hideTimer;
 
       const setToggleIcon = () => {
@@ -142,7 +143,7 @@
       const showMenu = () => {
         clearTimeout(hideTimer);
         if (!toggle.classList.contains("show")) {
-          toggle.click();
+          dropdown.show();
         }
       };
 
@@ -150,7 +151,7 @@
         clearTimeout(hideTimer);
         hideTimer = setTimeout(() => {
           if (toggle.classList.contains("show")) {
-            toggle.click();
+            dropdown.hide();
           }
         }, delay);
       };
@@ -158,7 +159,7 @@
       const hideNow = () => {
         clearTimeout(hideTimer);
         if (toggle.classList.contains("show")) {
-          toggle.click();
+          dropdown.hide();
         }
       };
 
@@ -172,14 +173,18 @@
 
       toggle.addEventListener("show.bs.dropdown", () => {
         setToggleIcon();
-        overlay.classList.add("active");
-        lockBodyScroll();
+        if (isMobileMenu) {
+          overlay.classList.add("active");
+          lockBodyScroll();
+        }
       });
 
       toggle.addEventListener("hide.bs.dropdown", () => {
         setToggleIcon();
-        overlay.classList.remove("active");
-        unlockBodyScroll();
+        if (isMobileMenu) {
+          overlay.classList.remove("active");
+          unlockBodyScroll();
+        }
       });
 
       setToggleIcon();
