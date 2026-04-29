@@ -4200,25 +4200,11 @@ img.lazy-image:not([data-src]) {
   }
 
   .detail-page-v2 .bd-thumb-list {
-    display: flex;
-    gap: 8px;
-    overflow-x: auto;
-    overflow-y: hidden;
-    -webkit-overflow-scrolling: touch;
-    scroll-snap-type: x proximity;
-    grid-template-columns: none;
-    padding-bottom: 2px;
+    display: none !important;
   }
 
-  .detail-page-v2 .bd-thumb-list::-webkit-scrollbar {
-    height: 0;
-  }
-
-  .detail-page-v2 .bd-thumb-btn,
-  .detail-page-v2 .bd-thumb-btn-more {
-    flex: 0 0 calc((100% - 16px) / 3);
-    max-width: calc((100% - 16px) / 3);
-    scroll-snap-align: start;
+  .detail-page-v2 .bd-gallery-col {
+    gap: 10px;
   }
 
   .detail-page-v2 .bd-tabs .detail-tabs-nav {
