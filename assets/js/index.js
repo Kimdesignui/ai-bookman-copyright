@@ -119,8 +119,8 @@
 
       const dropdown = bootstrap.Dropdown.getOrCreateInstance(toggle, { autoClose: true });
       const toggleIcon = toggle.querySelector("i");
-      const canHover = window.matchMedia("(hover: hover)").matches;
-      const isMobileMenu = window.matchMedia("(max-width: 900px)").matches;
+      const canHover = () => window.matchMedia("(hover: hover)").matches;
+      const isMobileMenu = () => window.matchMedia("(max-width: 1028px)").matches;
       let hideTimer;
 
       const setToggleIcon = () => {
@@ -163,7 +163,7 @@
         }
       };
 
-      if (canHover) {
+      if (canHover() && !isMobileMenu()) {
         wrap.addEventListener("mouseenter", showMenu);
         wrap.addEventListener("mouseleave", () => hideMenu(120));
         menu.addEventListener("mouseenter", () => clearTimeout(hideTimer));
@@ -174,13 +174,13 @@
       toggle.addEventListener("show.bs.dropdown", () => {
         setToggleIcon();
         overlay.classList.add("active");
-        if (isMobileMenu) lockBodyScroll();
+        if (isMobileMenu()) lockBodyScroll();
       });
 
       toggle.addEventListener("hide.bs.dropdown", () => {
         setToggleIcon();
         overlay.classList.remove("active");
-        if (isMobileMenu) unlockBodyScroll();
+        if (isMobileMenu()) unlockBodyScroll();
       });
 
       setToggleIcon();

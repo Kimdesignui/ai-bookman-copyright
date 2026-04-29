@@ -2041,7 +2041,7 @@ img.lazy-image:not([data-src]) {
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1028px) {
   .header-row {
     grid-template-columns: minmax(0, 1fr) auto;
     grid-template-areas:
@@ -2068,10 +2068,11 @@ img.lazy-image:not([data-src]) {
     gap: 8px;
     align-items: center;
     border-radius: 0;
-    padding: 10px 0;
+    width: auto;
+    margin-left: calc(-1 * var(--container-gutter));
+    margin-right: calc(-1 * var(--container-gutter));
+    padding: 10px var(--container-gutter);
     background: #fff;
-    width: 100%;
-    margin: 0;
   }
 
   .category-dropdown-wrap {
@@ -2446,8 +2447,9 @@ img.lazy-image:not([data-src]) {
     display: flex;
     flex-direction: row;
     grid-area: search;
-    width: 100%;
-    margin: 0 calc(-1 * var(--container-gutter));
+    width: auto;
+    margin-left: calc(-1 * var(--container-gutter));
+    margin-right: calc(-1 * var(--container-gutter));
     padding: 10px var(--container-gutter);
     background: #fff;
     gap: 8px;
@@ -4057,7 +4059,7 @@ img.lazy-image:not([data-src]) {
 
   .detail-page-v2 .bd-gallery-col {
     width: 100%;
-    max-width: 390px;
+    max-width: 100%;
     margin-left: auto;
     margin-right: auto;
   }
@@ -4148,20 +4150,6 @@ img.lazy-image:not([data-src]) {
 }
 
 @media (max-width: 768px) {
-  html,
-  body {
-    max-width: 100%;
-    overflow-x: hidden;
-  }
-
-  .page {
-    overflow-x: hidden;
-  }
-
-  .detail-page-v2 {
-    overflow-x: hidden;
-  }
-
   .detail-page-v2 .main-col,
   .detail-page-v2 .bd-product-card {
     width: 100%;
@@ -4193,8 +4181,8 @@ img.lazy-image:not([data-src]) {
   }
 
   .detail-page-v2 .bd-cover-frame {
-    width: min(100%, 360px);
-    max-width: 360px;
+    width: 100%;
+    max-width: 100%;
     margin-left: auto;
     margin-right: auto;
   }
@@ -4343,8 +4331,8 @@ img.lazy-image:not([data-src]) {
 
 @media (max-width: 480px) {
   .detail-page-v2 .bd-cover-frame {
-    width: min(100%, 280px);
-    max-width: 280px;
+    width: 100%;
+    max-width: 100%;
   }
 
   .detail-page-v2 .bd-thumb-btn,
@@ -6063,196 +6051,3 @@ img.lazy-image:not([data-src]) {
   }
 }
 
-/* Header mobile final override: stable 2-row layout + full-width white search strip */
-@media (max-width: 992px) {
-  .header {
-    overflow-x: hidden;
-  }
-
-  .header-row {
-    grid-template-columns: minmax(0, 1fr) auto;
-    grid-template-areas:
-      "brand actions"
-      "search search";
-    gap: 6px 10px;
-    padding-top: 6px;
-    padding-bottom: 0;
-  }
-
-  .header-brand {
-    grid-area: brand;
-    min-width: 0;
-  }
-
-  .header-actions {
-    grid-area: actions;
-    justify-self: end;
-    align-self: center;
-  }
-
-  .header-search-group {
-    grid-area: search;
-    width: auto;
-    margin-left: calc(-1 * var(--container-gutter));
-    margin-right: calc(-1 * var(--container-gutter));
-    padding: 10px max(var(--container-gutter), 16px);
-    background: #fff;
-    gap: 8px;
-    align-items: center;
-  }
-
-  .search-wrap {
-    flex: 1;
-    min-width: 0;
-  }
-
-  .category-dropdown-wrap {
-    flex: 0 0 auto;
-  }
-}
-
-@media (max-width: 992px) {
-  html,
-  body {
-    max-width: 100%;
-    overflow-x: hidden;
-  }
-
-  .detail-page-v2,
-  .detail-page-v2 .main-col,
-  .detail-page-v2 .bd-product-card,
-  .detail-page-v2 .bd-product-grid,
-  .detail-page-v2 .bd-gallery-col,
-  .detail-page-v2 .bd-summary-col {
-    width: 100%;
-    max-width: 100%;
-    min-width: 0;
-  }
-}
-
-/* Detail mobile fluid override: avoid fixed-width feeling on narrow screens */
-@media (max-width: 768px) {
-  .detail-page-v2 .bd-gallery-col {
-    max-width: none !important;
-  }
-
-  .detail-page-v2 .bd-cover-frame {
-    width: 100% !important;
-    max-width: none !important;
-    aspect-ratio: 3 / 4;
-  }
-}
-
-@media (max-width: 546px) {
-  .detail-page-v2 .bd-product-card {
-    padding: 10px !important;
-  }
-
-  .detail-page-v2 .bd-gallery-nav-prev {
-    left: 8px;
-  }
-
-  .detail-page-v2 .bd-gallery-nav-next {
-    right: 8px;
-  }
-
-  .detail-page-v2 .bd-quick-action,
-  .detail-page-v2 .bd-btn {
-    width: 100%;
-    max-width: 100%;
-    min-width: 0;
-    font-size: 14px;
-    line-height: 1.35;
-  }
-
-  .detail-page-v2 .bd-variant-card {
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-
-  .detail-page-v2 .bd-variant-row {
-    padding: 8px 8px;
-    grid-template-columns: minmax(0, 1fr) 30px;
-    column-gap: 6px;
-  }
-
-  .detail-page-v2 .bd-variant-left,
-  .detail-page-v2 .bd-variant-row.active .bd-variant-left {
-    grid-template-columns: minmax(0, 1fr);
-    grid-template-areas: none;
-    gap: 6px;
-  }
-
-  .detail-page-v2 .bd-variant-label {
-    width: auto !important;
-    min-width: 0;
-    white-space: normal;
-    font-size: 15px;
-  }
-
-  .detail-page-v2 .bd-select-control,
-  .detail-page-v2 .bd-qty-control,
-  .detail-page-v2 .bd-qty-control[data-variant-id],
-  .detail-page-v2 .bd-select-control[data-variant-id] {
-    width: 100%;
-    min-width: 0;
-    max-width: 100%;
-  }
-
-  .detail-page-v2 .bd-qty-control {
-    justify-content: center;
-  }
-
-  .detail-page-v2 .bd-qty-control button {
-    width: 30px;
-    height: 30px;
-    font-size: 16px;
-  }
-
-  .detail-page-v2 .bd-qty-control input {
-    width: 34px;
-    height: 30px;
-    font-size: 13px;
-  }
-
-  .detail-page-v2 .bd-variant-row .bd-variant-price-group,
-  .detail-page-v2 .bd-variant-row.active .bd-variant-price-group {
-    justify-self: start;
-    width: 100%;
-    min-width: 0;
-    gap: 6px;
-    flex-wrap: wrap;
-  }
-
-  .detail-page-v2 .bd-variant-row .bd-variant-price-group strong {
-    font-size: 15px;
-    line-height: 1.2;
-  }
-
-  .detail-page-v2 .bd-old-price {
-    font-size: 11px;
-  }
-
-  .detail-page-v2 .bd-comment-card,
-  .detail-page-v2 .bd-comment-list,
-  .detail-page-v2 .bd-comment-form,
-  .detail-page-v2 .bd-comment-parent,
-  .detail-page-v2 .bd-comment-body,
-  .detail-page-v2 .bd-comment-reply {
-    width: 100%;
-    max-width: 100%;
-    min-width: 0;
-  }
-
-  .detail-page-v2 .bd-comment-actions,
-  .detail-page-v2 .bd-comment-reply-head {
-    display: flex;
-    flex-wrap: wrap;
-    row-gap: 6px;
-  }
-
-  .detail-page-v2 .bd-comment-form button {
-    justify-self: stretch;
-    width: 100%;
-  }
-}

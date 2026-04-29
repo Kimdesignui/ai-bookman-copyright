@@ -505,7 +505,7 @@
         + "<div class='ai-chatbot-modal ai-fig-modal'>"
         + "<header class='ai-modal-head'><div class='ai-modal-title-wrap'><h4 class='ai-modal-title'>Fig. 115</h4></div><div class='ai-modal-actions'><button type='button' class='ai-modal-close' data-action='close-fig'><i class='bi bi-x-lg'></i></button></div></header>"
         + "<div class='ai-modal-body ai-fig-body'></div>"
-        + "<footer class='ai-fig-footer'><button type='button' class='ai-source-file-chip' data-action='open-fig-file'><img src='assets/img/PDF_file_icon.svg' alt='PDF icon'><span class='ai-fig-file-name'></span></button><div class='ai-fig-actions'><button type='button' class='ai-citation-btn ai-citation-origin' data-action='open-fig-origin'>Xem sách gốc</button><button type='button' class='ai-citation-btn ai-citation-btn-primary' data-action='open-fig-buy'>Mua</button></div></footer>"
+        + "<footer class='ai-fig-footer'><button type='button' class='ai-source-file-chip' data-action='open-fig-file'><img src='assets/img/report_icon.png?v=1' alt='Report icon'><span class='ai-fig-file-name'></span></button><div class='ai-fig-actions'><button type='button' class='ai-citation-btn ai-citation-origin' data-action='open-fig-origin'>Xem sách gốc</button><button type='button' class='ai-citation-btn ai-citation-btn-primary' data-action='open-fig-buy'>Mua</button></div></footer>"
         + "</div></div>"
         + "<div class='ai-chatbot-overlay ai-pdf-overlay' hidden>"
         + "<div class='ai-chatbot-modal ai-pdf-modal'>"
@@ -915,7 +915,7 @@
 
       const relatedPdfHtml = (payload.relatedPdfFiles || []).map(function (file) {
         return "<button type='button' class='ai-source-file-chip ai-related-pdf-chip' data-related-pdf='" + esc(file.id || "") + "' data-related-pdf-name='" + esc(file.name || "") + "'>"
-          + "<img src='assets/img/PDF_file_icon.svg' alt='PDF icon'>"
+          + "<img src='assets/img/report_icon.png?v=1' alt='Report icon'>"
           + "<span>" + esc(file.name || "Tài liệu liên quan.pdf") + "</span>"
           + "</button>";
       }).join("");
