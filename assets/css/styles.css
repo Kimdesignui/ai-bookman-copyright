@@ -6076,3 +6076,51 @@ img.lazy-image:not([data-src]) {
     padding: 16px 10px;
   }
 }
+
+/* Header mobile final override: stable 2-row layout + full-width white search strip */
+@media (max-width: 992px) {
+  .header {
+    overflow-x: clip;
+  }
+
+  .header-row {
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas:
+      "brand actions"
+      "search search";
+    gap: 6px 10px;
+    padding-top: 6px;
+    padding-bottom: 0;
+  }
+
+  .header-brand {
+    grid-area: brand;
+    min-width: 0;
+  }
+
+  .header-actions {
+    grid-area: actions;
+    justify-self: end;
+    align-self: center;
+  }
+
+  .header-search-group {
+    grid-area: search;
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    padding: 10px max(var(--container-gutter), 16px);
+    background: #fff;
+    gap: 8px;
+    align-items: center;
+  }
+
+  .search-wrap {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .category-dropdown-wrap {
+    flex: 0 0 auto;
+  }
+}
