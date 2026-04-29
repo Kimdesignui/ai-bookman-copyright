@@ -6106,9 +6106,9 @@ img.lazy-image:not([data-src]) {
 
   .header-search-group {
     grid-area: search;
-    width: 100vw;
-    margin-left: calc(50% - 50vw);
-    margin-right: calc(50% - 50vw);
+    width: auto;
+    margin-left: calc(-1 * var(--container-gutter));
+    margin-right: calc(-1 * var(--container-gutter));
     padding: 10px max(var(--container-gutter), 16px);
     background: #fff;
     gap: 8px;

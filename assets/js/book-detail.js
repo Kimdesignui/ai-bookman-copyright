@@ -224,7 +224,8 @@
     function getResponsiveThumbLimit() {
       const width = window.innerWidth || document.documentElement.clientWidth || 0;
       if (width <= 480) return 3;
-      if (width <= 768) return 4;
+      if (width <= 768) return 3;
+      if (width <= 992) return 4;
       return 5;
     }
 
