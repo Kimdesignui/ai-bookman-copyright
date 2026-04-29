@@ -6129,3 +6129,30 @@ img.lazy-image:not([data-src]) {
     min-width: 0;
   }
 }
+
+/* Detail mobile fluid override: avoid fixed-width feeling on narrow screens */
+@media (max-width: 768px) {
+  .detail-page-v2 .bd-gallery-col {
+    max-width: none !important;
+  }
+
+  .detail-page-v2 .bd-cover-frame {
+    width: 100% !important;
+    max-width: none !important;
+    aspect-ratio: 3 / 4;
+  }
+}
+
+@media (max-width: 546px) {
+  .detail-page-v2 .bd-product-card {
+    padding: 10px !important;
+  }
+
+  .detail-page-v2 .bd-gallery-nav-prev {
+    left: 8px;
+  }
+
+  .detail-page-v2 .bd-gallery-nav-next {
+    right: 8px;
+  }
+}
