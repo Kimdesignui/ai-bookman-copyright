@@ -1362,7 +1362,7 @@ body.category-overlay-open {
 
 .breadcrumb a {
   color: #687884;
-  display: block;
+  display: inline-block;
   min-width: 0;
   max-width: 100%;
   overflow: hidden;
@@ -1383,31 +1383,6 @@ body.category-overlay-open {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-}
-
-@media (max-width: 768px) {
-  .breadcrumb {
-    overflow: hidden;
-  }
-
-  .breadcrumb ol {
-    display: block;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
-
-  .breadcrumb li {
-    display: inline;
-  }
-
-  .breadcrumb li + li::before {
-    margin: 0 6px;
-  }
-
-  .breadcrumb li:last-child {
-    display: inline;
-  }
 }
 
 .detail-layout {
@@ -2619,7 +2594,7 @@ img.lazy-image:not([data-src]) {
 
 @media (max-width: 768px) {
   .container {
-    width: min(1232px, calc(100% - 16px));
+    width: min(1232px, calc(100% - (var(--container-gutter) * 2)));
   }
 
   .hero-main {
