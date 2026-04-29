@@ -928,12 +928,12 @@ body.category-overlay-open {
 
 #detail-related-prev,
 #detail-topic-prev {
-  left: -10px;
+  left: 0;
 }
 
 #detail-related-next,
 #detail-topic-next {
-  right: -10px;
+  right: 0;
 }
 
 .featured-carousel button:hover,
@@ -2262,14 +2262,14 @@ img.lazy-image:not([data-src]) {
   #good-books-prev,
   #detail-related-prev,
   #detail-topic-prev {
-    left: -6px;
+    left: 0;
   }
 
   #featured-next,
   #good-books-next,
   #detail-related-next,
   #detail-topic-next {
-    right: -6px;
+    right: 0;
   }
 
   .shelf-book {
@@ -2341,14 +2341,14 @@ img.lazy-image:not([data-src]) {
   #good-books-prev,
   #detail-related-prev,
   #detail-topic-prev {
-    left: -2px;
+    left: 0;
   }
 
   #featured-next,
   #good-books-next,
   #detail-related-next,
   #detail-topic-next {
-    right: -2px;
+    right: 0;
   }
 
   .shelf-heading-actions {
@@ -2456,9 +2456,10 @@ img.lazy-image:not([data-src]) {
     position: absolute;
     top: 0;
     bottom: 0;
-    left: 50%;
-    width: 100vw;
-    transform: translateX(-50%);
+    left: 0;
+    right: 0;
+    width: auto;
+    transform: none;
     background: #fff;
     z-index: -1;
     pointer-events: none;
