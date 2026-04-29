@@ -1,4 +1,4 @@
-﻿    const site = "https://sachquocgia.vn";
+﻿    const site = "#";
     const bookDetailPage = "book-detail.html";
     const lazyPlaceholder = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==";
 
@@ -12,10 +12,10 @@
     ];
 
     const detailGallery = [
-      "https://images.sachquocgia.vn/Thumbs/2024/2/29/image-20240229010554659.jpg",
-      "https://images.sachquocgia.vn/Picture/2025/9/11/image-20250911095154901.jpg",
-      "https://images.sachquocgia.vn/Picture/2025/8/25/image-20250825085630037.jpg",
-      "https://images.sachquocgia.vn/Picture/2025/8/25/image-20250825091242581.jpg"
+      "assets/img/none-cover.svg",
+      "assets/img/none-cover.svg",
+      "assets/img/none-cover.svg",
+      "assets/img/none-cover.svg"
     ];
 
     const productVariants = [
@@ -26,37 +26,37 @@
     ];
 
     const relatedBooks = [
-      { title: "Xây dựng và phát triển nền văn hóa Việt Nam tiên tiến, đậm đà bản sắc dân tộc", href: "/xay-dung-va-phat-trien-nen-van-hoa-viet-nam-tien-tien-dam-da-ban-sac-dan-toc-b12938.html", img: "https://images.sachquocgia.vn/Thumbs/2024/6/17/image-20240617144737905.jpg", price: "69.000₫" },
-      { title: "Xây dựng Đảng và hệ thống chính trị trong sạch, vững mạnh", href: "/xay-dung-dang-va-he-thong-chinh-tri-trong-sach-vung-manh-gop-phan-thuc-hien-thang-loi-nghi-quyet-dai-hoi-xiii-cua-dang-b12274.html", img: "https://images.sachquocgia.vn/Thumbs/2024/6/4/image-20240604154256965.jpg", price: "54.600₫" },
-      { title: "Biến thách thức thành cơ hội, quyết tâm tạo đột phá", href: "/bien-thach-thuc-thanh-co-hoi-quyet-tam-tao-dot-pha-dua-dat-nuoc-phat-trien-nhanh-ben-vung-b12273.html", img: "https://images.sachquocgia.vn/Thumbs/2024/2/1/image-20240201202405322.jpg", price: "66.200₫" },
-      { title: "Hồ Chủ tịch - Hình ảnh của dân tộc, tinh hoa của thời đại", href: "/ho-chu-tich-hinh-anh-cua-dan-toc-tinh-hoa-cua-thoi-dai-xuat-ban-lan-thu-hai-b14862.html", img: "https://images.sachquocgia.vn/Thumbs/2025/10/30/image-20251030162137031.jpg", price: "20.150₫" },
-      { title: "Ngoại giao văn hóa Mỹ trong hai thập niên đầu thế kỷ XXI", href: "/ngoai-giao-van-hoa-my-trong-hai-thap-nien-dau-the-ky-xxi-b14845.html", img: "https://images.sachquocgia.vn/Thumbs/2025/10/6/image-20251006104331846.jpg", price: "42.200₫" },
-      { title: "Hồ Chí Minh qua hồi ức của những cựu tù chính trị Côn Đảo", href: "/ho-chi-minh-qua-hoi-uc-cua-nhung-cuu-tu-chinh-tri-con-dao-b14841.html", img: "https://images.sachquocgia.vn/Thumbs/2025/10/3/image-20251003161423546.jpg", price: "39.300₫" }
+      { title: "Xây dựng và phát triển nền văn hóa Việt Nam tiên tiến, đậm đà bản sắc dân tộc", href: "/xay-dung-va-phat-trien-nen-van-hoa-viet-nam-tien-tien-dam-da-ban-sac-dan-toc-b12938.html", img: "assets/img/none-cover.svg", price: "69.000₫" },
+      { title: "Xây dựng Đảng và hệ thống chính trị trong sạch, vững mạnh", href: "/xay-dung-dang-va-he-thong-chinh-tri-trong-sach-vung-manh-gop-phan-thuc-hien-thang-loi-nghi-quyet-dai-hoi-xiii-cua-dang-b12274.html", img: "assets/img/none-cover.svg", price: "54.600₫" },
+      { title: "Biến thách thức thành cơ hội, quyết tâm tạo đột phá", href: "/bien-thach-thuc-thanh-co-hoi-quyet-tam-tao-dot-pha-dua-dat-nuoc-phat-trien-nhanh-ben-vung-b12273.html", img: "assets/img/none-cover.svg", price: "66.200₫" },
+      { title: "Hồ Chủ tịch - Hình ảnh của dân tộc, tinh hoa của thời đại", href: "/ho-chu-tich-hinh-anh-cua-dan-toc-tinh-hoa-cua-thoi-dai-xuat-ban-lan-thu-hai-b14862.html", img: "assets/img/none-cover.svg", price: "20.150₫" },
+      { title: "Ngoại giao văn hóa Mỹ trong hai thập niên đầu thế kỷ XXI", href: "/ngoai-giao-van-hoa-my-trong-hai-thap-nien-dau-the-ky-xxi-b14845.html", img: "assets/img/none-cover.svg", price: "42.200₫" },
+      { title: "Hồ Chí Minh qua hồi ức của những cựu tù chính trị Côn Đảo", href: "/ho-chi-minh-qua-hoi-uc-cua-nhung-cuu-tu-chinh-tri-con-dao-b14841.html", img: "assets/img/none-cover.svg", price: "39.300₫" }
     ];
 
     const topicBooks = [
-      { title: "Giáo trình triết học", href: "/giao-trinh-triet-hoc-dung-cho-khoi-khong-chuyen-nganh-triet-hoc-trinh-do-dao-tao-thac-si-tien-si-cac-nganh-khoa-hoc-tu-nhien-cong-nghe-xuat-ban-lan-thu-nam-b12100.html", img: "https://images.sachquocgia.vn/Thumbs/2024/4/24/image-20240424174821224.jpg", price: "57.900₫" },
-      { title: "Giáo trình Lịch sử Đảng Cộng sản Việt Nam", href: "/giao-trinh-lich-su-dang-cong-san-viet-nam-danh-cho-bac-dai-hoc-he-khong-chuyen-ly-luan-chinh-tri-b12464.html", img: "https://images.sachquocgia.vn/Thumbs/2024/3/21/image-2024032114122991.jpg", price: "58.000₫" },
-      { title: "Tự hào và tin tưởng dưới lá cờ vẻ vang của Đảng", href: "/sach-noi-tu-hao-va-tin-tuong-duoi-la-co-ve-vang-cua-dang-quyet-tam-xay-dung-mot-nuoc-viet-nam-ngay-cang-giau-manh-van-minh-van-hien-va-anh-hung-b12401.html", img: "https://images.sachquocgia.vn/Thumbs/2024/3/1/image-20240301180127722.jpg", price: "61.500₫" },
-      { title: "Miền Nam trong trái tim Hồ Chí Minh", href: "/mien-nam-trong-trai-tim-ho-chi-minh-b14870.html", img: "https://images.sachquocgia.vn/Thumbs/2025/10/30/image-20251030172913646.jpg", price: "73.550₫" },
-      { title: "Thư ký Bác Hồ kể chuyện", href: "/thu-ky-bac-ho-ke-chuyen-xuat-ban-lan-thu-tu-co-chinh-sua-b14878.html", img: "https://images.sachquocgia.vn/Thumbs/2025/10/30/image-20251030180621474.jpg", price: "53.800₫" },
-      { title: "Bảy cuộc khủng hoảng định hình toàn cầu hóa", href: "/bay-cuoc-khung-hoang-dinh-hinh-toan-cau-hoa-sach-tham-khao-b14820.html", img: "https://images.sachquocgia.vn/Thumbs/2025/8/13/image-20250813144547630.jpg", price: "106.100₫" }
+      { title: "Giáo trình triết học", href: "/giao-trinh-triet-hoc-dung-cho-khoi-khong-chuyen-nganh-triet-hoc-trinh-do-dao-tao-thac-si-tien-si-cac-nganh-khoa-hoc-tu-nhien-cong-nghe-xuat-ban-lan-thu-nam-b12100.html", img: "assets/img/none-cover.svg", price: "57.900₫" },
+      { title: "Giáo trình Lịch sử Đảng Cộng sản Việt Nam", href: "/giao-trinh-lich-su-dang-cong-san-viet-nam-danh-cho-bac-dai-hoc-he-khong-chuyen-ly-luan-chinh-tri-b12464.html", img: "assets/img/none-cover.svg", price: "58.000₫" },
+      { title: "Tự hào và tin tưởng dưới lá cờ vẻ vang của Đảng", href: "/sach-noi-tu-hao-va-tin-tuong-duoi-la-co-ve-vang-cua-dang-quyet-tam-xay-dung-mot-nuoc-viet-nam-ngay-cang-giau-manh-van-minh-van-hien-va-anh-hung-b12401.html", img: "assets/img/none-cover.svg", price: "61.500₫" },
+      { title: "Miền Nam trong trái tim Hồ Chí Minh", href: "/mien-nam-trong-trai-tim-ho-chi-minh-b14870.html", img: "assets/img/none-cover.svg", price: "73.550₫" },
+      { title: "Thư ký Bác Hồ kể chuyện", href: "/thu-ky-bac-ho-ke-chuyen-xuat-ban-lan-thu-tu-co-chinh-sua-b14878.html", img: "assets/img/none-cover.svg", price: "53.800₫" },
+      { title: "Bảy cuộc khủng hoảng định hình toàn cầu hóa", href: "/bay-cuoc-khung-hoang-dinh-hinh-toan-cau-hoa-sach-tham-khao-b14820.html", img: "assets/img/none-cover.svg", price: "106.100₫" }
     ];
 
     const buyMost = [
-      { title: "Giáo trình Tư tưởng Hồ Chí Minh", href: "/giao-trinh-tu-tuong-ho-chi-minh-danh-cho-bac-dai-hoc-he-khong-chuyen-ly-luan-chinh-tri-b12468.html", img: "https://images.sachquocgia.vn/Thumbs/2024/3/21/image-2024032114215276.jpg", metric: "131 lượt mua" },
-      { title: "Giáo trình triết học", href: "/giao-trinh-triet-hoc-dung-cho-khoi-khong-chuyen-nganh-triet-hoc-trinh-do-dao-tao-thac-si-tien-si-cac-nganh-khoa-hoc-tu-nhien-cong-nghe-xuat-ban-lan-thu-nam-b12100.html", img: "https://images.sachquocgia.vn/Thumbs/2024/4/24/image-20240424174821224.jpg", metric: "101 lượt mua" },
-      { title: "Tự hào và tin tưởng dưới lá cờ vẻ vang của Đảng", href: "/sach-noi-tu-hao-va-tin-tuong-duoi-la-co-ve-vang-cua-dang-quyet-tam-xay-dung-mot-nuoc-viet-nam-ngay-cang-giau-manh-van-minh-van-hien-va-anh-hung-b12401.html", img: "https://images.sachquocgia.vn/Thumbs/2024/3/1/image-20240301180127722.jpg", metric: "87 lượt mua" },
-      { title: "Giáo trình Triết học Mác - Lênin", href: "/giao-trinh-triet-hoc-mac-lenin-danh-cho-bac-dai-hoc-he-khong-chuyen-ly-luan-chinh-tri-b12466.html", img: "https://images.sachquocgia.vn/Thumbs/2024/3/21/image-20240321142038119.jpg", metric: "61 lượt mua" },
-      { title: "Giáo trình Lịch sử Đảng Cộng sản Việt Nam", href: "/giao-trinh-lich-su-dang-cong-san-viet-nam-danh-cho-bac-dai-hoc-he-khong-chuyen-ly-luan-chinh-tri-b12464.html", img: "https://images.sachquocgia.vn/Thumbs/2024/3/21/image-2024032114122991.jpg", metric: "57 lượt mua" }
+      { title: "Giáo trình Tư tưởng Hồ Chí Minh", href: "/giao-trinh-tu-tuong-ho-chi-minh-danh-cho-bac-dai-hoc-he-khong-chuyen-ly-luan-chinh-tri-b12468.html", img: "assets/img/none-cover.svg", metric: "131 lượt mua" },
+      { title: "Giáo trình triết học", href: "/giao-trinh-triet-hoc-dung-cho-khoi-khong-chuyen-nganh-triet-hoc-trinh-do-dao-tao-thac-si-tien-si-cac-nganh-khoa-hoc-tu-nhien-cong-nghe-xuat-ban-lan-thu-nam-b12100.html", img: "assets/img/none-cover.svg", metric: "101 lượt mua" },
+      { title: "Tự hào và tin tưởng dưới lá cờ vẻ vang của Đảng", href: "/sach-noi-tu-hao-va-tin-tuong-duoi-la-co-ve-vang-cua-dang-quyet-tam-xay-dung-mot-nuoc-viet-nam-ngay-cang-giau-manh-van-minh-van-hien-va-anh-hung-b12401.html", img: "assets/img/none-cover.svg", metric: "87 lượt mua" },
+      { title: "Giáo trình Triết học Mác - Lênin", href: "/giao-trinh-triet-hoc-mac-lenin-danh-cho-bac-dai-hoc-he-khong-chuyen-ly-luan-chinh-tri-b12466.html", img: "assets/img/none-cover.svg", metric: "61 lượt mua" },
+      { title: "Giáo trình Lịch sử Đảng Cộng sản Việt Nam", href: "/giao-trinh-lich-su-dang-cong-san-viet-nam-danh-cho-bac-dai-hoc-he-khong-chuyen-ly-luan-chinh-tri-b12464.html", img: "assets/img/none-cover.svg", metric: "57 lượt mua" }
     ];
 
     const viewMost = [
-      { title: "Xây dựng và phát triển nền văn hóa Việt Nam tiên tiến, đậm đà bản sắc dân tộc", href: "/xay-dung-va-phat-trien-nen-van-hoa-viet-nam-tien-tien-dam-da-ban-sac-dan-toc-b12938.html", img: "https://images.sachquocgia.vn/Thumbs/2024/6/17/image-20240617144737905.jpg", metric: "6368 lượt xem" },
-      { title: "Tự hào và tin tưởng dưới lá cờ vẻ vang của Đảng", href: "/sach-noi-tu-hao-va-tin-tuong-duoi-la-co-ve-vang-cua-dang-quyet-tam-xay-dung-mot-nuoc-viet-nam-ngay-cang-giau-manh-van-minh-van-hien-va-anh-hung-b12401.html", img: "https://images.sachquocgia.vn/Thumbs/2024/3/1/image-20240301180127722.jpg", metric: "4031 lượt xem" },
-      { title: "Xây dựng Đảng và hệ thống chính trị trong sạch, vững mạnh", href: "/xay-dung-dang-va-he-thong-chinh-tri-trong-sach-vung-manh-gop-phan-thuc-hien-thang-loi-nghi-quyet-dai-hoi-xiii-cua-dang-b12274.html", img: "https://images.sachquocgia.vn/Thumbs/2024/6/4/image-20240604154256965.jpg", metric: "2395 lượt xem" },
-      { title: "Xây dựng và phát triển nền đối ngoại, ngoại giao Việt Nam", href: "/xay-dung-va-phat-trien-nen-doi-ngoai-ngoai-giao-viet-nam-toan-dien-hien-dai-mang-dam-ban-sac-cay-tre-viet-nam-b12323.html", img: "https://images.sachquocgia.vn/Thumbs/2024/2/29/image-20240229010554659.jpg", metric: "2172 lượt xem" },
-      { title: "Biến thách thức thành cơ hội, quyết tâm tạo đột phá", href: "/bien-thach-thuc-thanh-co-hoi-quyet-tam-tao-dot-pha-dua-dat-nuoc-phat-trien-nhanh-ben-vung-b12273.html", img: "https://images.sachquocgia.vn/Thumbs/2024/2/1/image-20240201202405322.jpg", metric: "2158 lượt xem" }
+      { title: "Xây dựng và phát triển nền văn hóa Việt Nam tiên tiến, đậm đà bản sắc dân tộc", href: "/xay-dung-va-phat-trien-nen-van-hoa-viet-nam-tien-tien-dam-da-ban-sac-dan-toc-b12938.html", img: "assets/img/none-cover.svg", metric: "6368 lượt xem" },
+      { title: "Tự hào và tin tưởng dưới lá cờ vẻ vang của Đảng", href: "/sach-noi-tu-hao-va-tin-tuong-duoi-la-co-ve-vang-cua-dang-quyet-tam-xay-dung-mot-nuoc-viet-nam-ngay-cang-giau-manh-van-minh-van-hien-va-anh-hung-b12401.html", img: "assets/img/none-cover.svg", metric: "4031 lượt xem" },
+      { title: "Xây dựng Đảng và hệ thống chính trị trong sạch, vững mạnh", href: "/xay-dung-dang-va-he-thong-chinh-tri-trong-sach-vung-manh-gop-phan-thuc-hien-thang-loi-nghi-quyet-dai-hoi-xiii-cua-dang-b12274.html", img: "assets/img/none-cover.svg", metric: "2395 lượt xem" },
+      { title: "Xây dựng và phát triển nền đối ngoại, ngoại giao Việt Nam", href: "/xay-dung-va-phat-trien-nen-doi-ngoai-ngoai-giao-viet-nam-toan-dien-hien-dai-mang-dam-ban-sac-cay-tre-viet-nam-b12323.html", img: "assets/img/none-cover.svg", metric: "2172 lượt xem" },
+      { title: "Biến thách thức thành cơ hội, quyết tâm tạo đột phá", href: "/bien-thach-thuc-thanh-co-hoi-quyet-tam-tao-dot-pha-dua-dat-nuoc-phat-trien-nhanh-ben-vung-b12273.html", img: "assets/img/none-cover.svg", metric: "2158 lượt xem" }
     ];
 
     let activeVariantId = productVariants[0].id;
@@ -126,7 +126,7 @@
         ${items}
         <li><hr class="dropdown-divider m-0"></li>
         <li>
-          <a class="dropdown-item category-dropdown-all" href="https://sachquocgia.vn/tat-ca-danh-muc" target="_blank" rel="noreferrer">
+          <a class="dropdown-item category-dropdown-all" href="#" target="_blank" rel="noreferrer">
             <i class="bi bi-list"></i>
             <span>Xem tất cả danh mục</span>
           </a>
@@ -704,7 +704,7 @@
         title: detailBookTitle,
         detailUrl: "book-detail.html",
         buyUrl: "book-detail.html",
-        readerUrl: "https://sachquocgia.vn/customer/purchased-book"
+        readerUrl: "#"
       };
 
       window.initAiChatbotWidget({
@@ -717,7 +717,7 @@
             return (bookMeta && bookMeta.detailUrl) || "book-detail.html";
           },
           reader: function (bookMeta) {
-            return (bookMeta && bookMeta.readerUrl) || "https://sachquocgia.vn/customer/purchased-book";
+            return (bookMeta && bookMeta.readerUrl) || "#";
           },
           buy: function (bookMeta) {
             return (bookMeta && bookMeta.buyUrl) || ((bookMeta && bookMeta.detailUrl) || "book-detail.html");
@@ -725,5 +725,7 @@
         }
       });
     }
+
+
 
 

@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+﻿@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
 
 :root {
   /* Color primitives */
@@ -1183,6 +1183,8 @@ body.category-overlay-open {
   grid-template-columns: 1fr;
   gap: 10px;
   margin-top: 10px;
+  border-radius: 5px;
+  overflow: hidden;
 }
 
 .side-card-rank-tabs {
@@ -1752,8 +1754,12 @@ body.category-overlay-open {
   gap: 6px;
 }
 
-.detail-toc li {
-  padding-left: 2px;
+
+
+#detail-intro p,
+#detail-toc .detail-toc li {
+  font-size: 16px;
+  line-height: 1.7;
 }
 
 .detail-related-section .featured-carousel {
@@ -6050,4 +6056,7 @@ img.lazy-image:not([data-src]) {
     padding: 16px 10px;
   }
 }
+
+
+
 

@@ -1,4 +1,4 @@
-(function () {
+﻿(function () {
   "use strict";
 
   const DEFAULT_CONFIG = {
@@ -8,7 +8,7 @@
     userState: { isPurchased: false },
     routes: {
       detail: function (bookMeta) { return (bookMeta && bookMeta.detailUrl) || "book-detail.html"; },
-      reader: function (bookMeta) { return (bookMeta && bookMeta.readerUrl) || "https://sachquocgia.vn/customer/purchased-book"; },
+      reader: function (bookMeta) { return (bookMeta && bookMeta.readerUrl) || "#"; },
       buy: function (bookMeta) { return (bookMeta && bookMeta.buyUrl) || ((bookMeta && bookMeta.detailUrl) || "book-detail.html"); }
     }
   };
@@ -36,11 +36,11 @@
   class CitationService {
     constructor() {
       this.books = [
-        { bookId: "b12323", title: "Xây dựng và phát triển nền đối ngoại, ngoại giao Việt Nam", chapter: "Chương 2", detailUrl: "book-detail.html", buyUrl: "book-detail.html", readerUrl: "https://sachquocgia.vn/customer/purchased-book" },
-        { bookId: "b12274", title: "Xây dựng Đảng và hệ thống chính trị trong sạch, vững mạnh", chapter: "Chương 3", detailUrl: "book-detail.html", buyUrl: "book-detail.html", readerUrl: "https://sachquocgia.vn/customer/purchased-book" },
-        { bookId: "b12401", title: "Tự hào và tin tưởng dưới lá cờ vẻ vang của Đảng", chapter: "Phần 1", detailUrl: "book-detail.html", buyUrl: "book-detail.html", readerUrl: "https://sachquocgia.vn/customer/purchased-book" },
-        { bookId: "b12100", title: "Giáo trình triết học", chapter: "Mục 4.2", detailUrl: "book-detail.html", buyUrl: "book-detail.html", readerUrl: "https://sachquocgia.vn/customer/purchased-book" },
-        { bookId: "b12938", title: "Xây dựng và phát triển nền văn hóa Việt Nam tiên tiến", chapter: "Chương 1", detailUrl: "book-detail.html", buyUrl: "book-detail.html", readerUrl: "https://sachquocgia.vn/customer/purchased-book" }
+        { bookId: "b12323", title: "Xây dựng và phát triển nền đối ngoại, ngoại giao Việt Nam", chapter: "Chương 2", detailUrl: "book-detail.html", buyUrl: "book-detail.html", readerUrl: "#" },
+        { bookId: "b12274", title: "Xây dựng Đảng và hệ thống chính trị trong sạch, vững mạnh", chapter: "Chương 3", detailUrl: "book-detail.html", buyUrl: "book-detail.html", readerUrl: "#" },
+        { bookId: "b12401", title: "Tự hào và tin tưởng dưới lá cờ vẻ vang của Đảng", chapter: "Phần 1", detailUrl: "book-detail.html", buyUrl: "book-detail.html", readerUrl: "#" },
+        { bookId: "b12100", title: "Giáo trình triết học", chapter: "Mục 4.2", detailUrl: "book-detail.html", buyUrl: "book-detail.html", readerUrl: "#" },
+        { bookId: "b12938", title: "Xây dựng và phát triển nền văn hóa Việt Nam tiên tiến", chapter: "Chương 1", detailUrl: "book-detail.html", buyUrl: "book-detail.html", readerUrl: "#" }
       ];
       this.citations = [
         { citationId: "c-001", quote: "Ngoại giao Việt Nam phải toàn diện, hiện đại, mang đậm bản sắc dân tộc", bookId: "b12323", score: 0.96 },
@@ -1130,7 +1130,7 @@
         title: result.bookTitle,
         detailUrl: "book-detail.html",
         buyUrl: "book-detail.html",
-        readerUrl: "https://sachquocgia.vn/customer/purchased-book"
+        readerUrl: "#"
       };
       const snippets = this.citationService.getSimilarSnippets(result.citationId);
       this.activeCitationPayload = {
@@ -1297,3 +1297,5 @@
     return widget;
   };
 })();
+
+
