@@ -12,9 +12,9 @@
     ];
 
     const heroSlides = [
-      { title: "Slide 1", href: "#", img: "https://images.vhmt.vn/Picture/2024/5/17/image-1.jpg" },
-      { title: "Slide 2", href: "#", img: "https://images.vhmt.vn/Picture/2024/5/17/image-2.jpg" },
-      { title: "Slide 3", href: "#", img: "https://images.vhmt.vn/Picture/2024/5/17/image-3.jpg" }
+      { title: "Slide 1", href: "#", img: "https://images.sachquocgia.vn/Picture/2025/8/25/image-20250825091242581.jpg" },
+      { title: "Slide 2", href: "#", img: "https://images.sachquocgia.vn/Picture/2025/8/25/image-20250825091630650.jpg" },
+      { title: "Slide 3", href: "#", img: "https://images.sachquocgia.vn/Picture/2025/8/25/image-20250825091702025.jpg" }
     ];
 
     const books = [
@@ -211,6 +211,8 @@
       const root = document.querySelector(".hero-slider");
       let index = 0;
       let timer;
+      let startX = 0;
+      let startY = 0;
 
       function show(nextIndex) {
         index = (nextIndex + slides.length) % slides.length;
@@ -237,6 +239,22 @@
       });
       root.addEventListener("mouseenter", stop);
       root.addEventListener("mouseleave", start);
+      root.addEventListener("touchstart", (event) => {
+        const touch = event.changedTouches && event.changedTouches[0];
+        if (!touch) return;
+        startX = touch.clientX;
+        startY = touch.clientY;
+      }, { passive: true });
+      root.addEventListener("touchend", (event) => {
+        const touch = event.changedTouches && event.changedTouches[0];
+        if (!touch) return;
+        const deltaX = touch.clientX - startX;
+        const deltaY = touch.clientY - startY;
+        if (Math.abs(deltaX) < 38 || Math.abs(deltaX) <= Math.abs(deltaY)) return;
+        if (deltaX < 0) show(index + 1);
+        else show(index - 1);
+        start();
+      }, { passive: true });
       document.addEventListener("visibilitychange", () => {
         if (document.hidden) stop();
         else start();

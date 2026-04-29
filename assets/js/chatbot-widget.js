@@ -647,6 +647,7 @@
         if (action === "download-report") this.downloadReport();
         if (action === "view-as-pdf") this.switchReportPreviewFormat("pdf");
         if (action === "view-as-docx") this.switchReportPreviewFormat("docx");
+        if (action === "open-report-fig-note") this.showReportFigureNote(btn.getAttribute("data-fig-id") || "");
         if (action === "toggle-email") {
           const show = this.emailForm.hasAttribute("hidden");
           if (show) {
@@ -1037,16 +1038,48 @@
     buildSourceReportPreviewHtml(payload) {
       const sections = (payload.sections || []).map(function (section) {
         const paragraphs = (section.paragraphs || []).map(function (text) {
-          return "<p>" + esc(String(text || "").replace(/ ?Fig\\.? ?\\d+/g, "")) + "</p>";
-        }).join("");
-        return "<section><h4>" + esc(section.heading || "") + "</h4>" + paragraphs + "</section>";
-      }).join("");
+          return "<p>" + this.decorateReportParagraph(text, payload) + "</p>";
+        }, this).join("");
+        return "<section><h4><strong>" + esc(section.heading || "") + "</strong></h4>" + paragraphs + "</section>";
+      }, this).join("");
       return "<article class='ai-preview-doc ai-source-report-doc'>"
-        + "<h2>" + esc(payload.title || "Báo cáo") + "</h2>"
+        + "<h2><strong>" + esc(payload.title || "Báo cáo") + "</strong></h2>"
         + "<p class='ai-preview-sub'>" + esc(payload.subtitle || "") + "</p>"
         + "<p class='ai-preview-date'>Ngày tạo: " + esc(payload.createdAt || "") + "</p>"
         + sections
         + "</article>";
+    }
+
+    decorateReportParagraph(text, payload) {
+      const raw = String(text || "");
+      if (!raw) return "";
+      const figureRegex = /Fig\.?\s?(\d+)\.?/g;
+      let output = "";
+      let lastIndex = 0;
+      let match = figureRegex.exec(raw);
+      while (match) {
+        const full = match[0];
+        const number = match[1];
+        const figId = "fig-" + number;
+        output += esc(raw.slice(lastIndex, match.index));
+        output += "<button type='button' class='ai-report-fig-note' data-action='open-report-fig-note' data-fig-id='" + esc(figId) + "'>" + esc(full) + "</button>";
+        lastIndex = match.index + full.length;
+        match = figureRegex.exec(raw);
+      }
+      output += esc(raw.slice(lastIndex));
+      return output;
+    }
+
+    showReportFigureNote(figId) {
+      if (!figId || !this.activeDisciplinePayload) return;
+      const payload = this.activeDisciplinePayload;
+      const detail = this.disciplineDemoService.resolveFigure(payload, figId);
+      const figure = (payload.figures || []).find(function (item) { return item.id === figId; }) || null;
+      const figLabel = (figure && figure.label) || (detail && detail.title) || figId.replace("fig-", "Fig. ");
+      const detailText = detail && detail.lines && detail.lines.length
+        ? detail.lines.slice(0, 2).join(" ")
+        : ((figure && figure.caption) ? figure.caption : "Đây là ghi chú trích dẫn liên quan trong báo cáo.");
+      this.showOriginPermissionNotice(figLabel + ": " + detailText);
     }
 
     openSourceReportPreview() {

@@ -284,6 +284,9 @@
       const prev = document.getElementById("detail-gallery-prev");
       const next = document.getElementById("detail-gallery-next");
       const wrap = document.getElementById("detail-thumb-list");
+      const coverFrame = document.querySelector(".detail-page-v2 .bd-cover-frame");
+      let startX = 0;
+      let startY = 0;
       if (!wrap) return;
 
       prev?.addEventListener("click", () => {
@@ -302,6 +305,27 @@
         galleryIndex = Number(target.dataset.index);
         syncGalleryMainImage();
       });
+
+      coverFrame?.addEventListener("touchstart", (event) => {
+        const touch = event.changedTouches && event.changedTouches[0];
+        if (!touch) return;
+        startX = touch.clientX;
+        startY = touch.clientY;
+      }, { passive: true });
+
+      coverFrame?.addEventListener("touchend", (event) => {
+        const touch = event.changedTouches && event.changedTouches[0];
+        if (!touch) return;
+        const deltaX = touch.clientX - startX;
+        const deltaY = touch.clientY - startY;
+        if (Math.abs(deltaX) < 34 || Math.abs(deltaX) <= Math.abs(deltaY)) return;
+        if (deltaX < 0) {
+          galleryIndex = (galleryIndex + 1) % detailGallery.length;
+        } else {
+          galleryIndex = (galleryIndex - 1 + detailGallery.length) % detailGallery.length;
+        }
+        syncGalleryMainImage();
+      }, { passive: true });
     }
 
     function getVariantById(id) {
