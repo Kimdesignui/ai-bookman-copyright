@@ -173,18 +173,14 @@
 
       toggle.addEventListener("show.bs.dropdown", () => {
         setToggleIcon();
-        if (isMobileMenu) {
-          overlay.classList.add("active");
-          lockBodyScroll();
-        }
+        overlay.classList.add("active");
+        if (isMobileMenu) lockBodyScroll();
       });
 
       toggle.addEventListener("hide.bs.dropdown", () => {
         setToggleIcon();
-        if (isMobileMenu) {
-          overlay.classList.remove("active");
-          unlockBodyScroll();
-        }
+        overlay.classList.remove("active");
+        if (isMobileMenu) unlockBodyScroll();
       });
 
       setToggleIcon();
