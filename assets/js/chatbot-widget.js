@@ -537,7 +537,7 @@
         + "<div class='ai-chatbot-starters'>"
         + "<button type='button' data-starter='Báo cáo từ dữ liệu sách bản quyền trên hệ thống'><i class='bi bi-journal-text'></i><span>Báo cáo từ dữ liệu sách bản quyền trên hệ thống</span></button>"
         + "<button type='button' data-starter='Trích dẫn về một nội dung từ kho sách bản quyền'><i class='bi bi-blockquote-left'></i><span>Tìm trích dẫn về một nội dung</span></button>"
-        + "<button type='button' data-starter='Cho mình thông tin xuất bản, tóm tắt nội dung và danh sách tác giả của cuốn b12401'><i class='bi bi-book'></i><span>Demo thông tin 1 cuốn sách</span></button>"
+        + "<button type='button' data-starter='Cho mình thông tin xuất bản, tóm tắt nội dung và danh sách tác giả của cuốn b12401'><i class='bi bi-book'></i><span>Tìm kiếm Thông tin 1 cuốn sách</span></button>"
         + "</div>"
         + "</div>"
         + "<form class='ai-chatbot-composer'><div class='ai-composer-field'><textarea rows='1' placeholder='Nhập câu hỏi cho BookMan...'></textarea><span class='ai-composer-aiicon' aria-hidden='true'><img src='assets/img/ai-icon.svg' alt='AI'></span></div><button type='submit' aria-label='Gửi'><i class='bi bi-send-fill'></i></button></form>"
