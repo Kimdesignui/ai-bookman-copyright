@@ -474,13 +474,13 @@
       document.body.insertAdjacentHTML("beforeend",
         "<div id='ai-chatbot-root' class='ai-chatbot-root'>"
         + "<button type='button' class='ai-chatbot-fab' aria-label='Mở AI chatbot' title='Mở AI chatbot'><span class='ai-chatbot-fab-glass' aria-hidden='true'></span><span class='ai-chatbot-fab-orb' aria-hidden='true'></span><img class='ai-chatbot-fab-icon' src='assets/img/Chatbot.svg' alt='Chatbot'></button>"
-        + "<section class='ai-chatbot-panel' aria-label='AI BookMan'>"
+        + "<section class='ai-chatbot-panel' aria-label='VHMT AI BookMan'>"
         + "<header class='ai-chatbot-head'>"
-        + "<div class='ai-chatbot-title'><span class='ai-chatbot-title-icon'><img src='assets/img/Chatbot.svg' alt='AI BookMan'></span><strong>AI BookMan</strong><span class='ai-chatbot-status-dot'></span></div>"
+        + "<div class='ai-chatbot-title'><span class='ai-chatbot-title-icon'><img src='assets/img/Chatbot.svg' alt='AI BookMan'></span><strong>VHMT AI BookMan</strong><span class='ai-chatbot-status-dot'></span></div>"
         + "<div class='ai-chatbot-head-actions'><button type='button' class='ai-chatbot-btn-icon' data-action='toggle-expand' aria-label='Phóng to thu nhỏ'><i class='bi bi-arrows-angle-expand'></i></button><button type='button' class='ai-chatbot-btn-icon' data-action='close-chat' aria-label='Đóng'><i class='bi bi-x-lg'></i></button></div>"
         + "</header>"
         + "<div class='ai-chatbot-body'>"
-                + "<div class='ai-chatbot-empty'><div class='ai-chatbot-empty-icon'><img src='assets/img/Chatbot.svg' alt='AI BookMan'></div><h4>Chào mừng bạn đến với Trợ lý BookMan. Bạn cần hỗ trợ gì?</h4><p>Nhập câu hỏi của bạn ở vùng nhập nội dung hoặc chọn những chủ đề gợi ý</p></div>"
+                + "<div class='ai-chatbot-empty'><div class='ai-chatbot-empty-icon'><img src='assets/img/Chatbot.svg' alt='AI BookMan'></div><h4>Chào mừng bạn đến với Trợ lý VHMT AI BookMan. Bạn cần hỗ trợ gì?</h4><p>Nhập câu hỏi của bạn ở vùng nhập nội dung hoặc chọn những chủ đề gợi ý</p></div>"
         + "<div class='ai-chatbot-thread' aria-live='polite'></div>"
                 + "<div class='ai-chatbot-starters'>"
         + "<button type='button' data-starter='Báo cáo từ dữ liệu sách bản quyền trên hệ thống'><i class='bi bi-journal-text'></i><span>Báo cáo từ dữ liệu sách bản quyền trên hệ thống</span></button>"
@@ -1297,5 +1297,6 @@
     return widget;
   };
 })();
+
 
 
