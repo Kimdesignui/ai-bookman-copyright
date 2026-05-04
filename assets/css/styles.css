@@ -4761,7 +4761,7 @@ img.lazy-image:not([data-src]) {
 }
 
 .ai-msg-bot {
-  justify-content: flex-start;
+  justify-content: flex-end;
 }
 
 .ai-msg-bubble {
@@ -4780,6 +4780,9 @@ img.lazy-image:not([data-src]) {
 .ai-msg-bot .ai-msg-bubble {
   background: rgba(15, 108, 246, 0.1);
   color: #111827;
+  width: 88%;
+  max-width: 88%;
+  margin-left: auto;
 }
 
 .ai-chatbot-thread::-webkit-scrollbar {
@@ -4822,8 +4825,9 @@ img.lazy-image:not([data-src]) {
 .ai-msg-status .ai-msg-bubble {
   background: #1e57d8;
   color: #fff;
-  max-width: 84%;
-  margin-left: 60px;
+  width: 88%;
+  max-width: 88%;
+  margin-left: auto;
 }
 
 .ai-chatbot-starters {
@@ -5226,6 +5230,66 @@ img.lazy-image:not([data-src]) {
 
 .ai-report-cta-chip:hover {
   background: #f8fbff;
+}
+
+.ai-book-info-card {
+  width: min(100%, 860px);
+}
+
+.ai-book-meta-table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #dbe3ef;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.ai-book-meta-table th,
+.ai-book-meta-table td {
+  padding: 10px 12px;
+  border-bottom: 1px solid #e5e7eb;
+  vertical-align: top;
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.ai-book-meta-table tr:last-child th,
+.ai-book-meta-table tr:last-child td {
+  border-bottom: 0;
+}
+
+.ai-book-meta-table th {
+  width: 180px;
+  font-weight: 700;
+  color: #111827;
+  background: #f8fbff;
+  text-align: left;
+}
+
+.ai-book-meta-table td {
+  color: #1f2937;
+}
+
+.ai-book-info-list {
+  margin: 0;
+  padding-left: 20px;
+  display: grid;
+  gap: 8px;
+}
+
+.ai-book-info-list li {
+  color: #1f2937;
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.ai-book-info-note {
+  margin: 10px 0 0;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #4b5563;
+  word-break: break-word;
 }
 
 .ai-knowledge-source {

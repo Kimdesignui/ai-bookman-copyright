@@ -33,6 +33,35 @@
     }
   }
 
+  class BookInfoDemoService {
+    buildPayload() {
+      return {
+        bookId: "b12401",
+        title: "Nơi tự hào và tin tưởng dưới lá cờ vẻ vang của Đảng, quyết tâm xây dựng một nước Việt Nam ngày càng giàu mạnh, văn minh, văn hiến và anh hùng",
+        publication: [
+          { label: "Năm XB", value: "2023" },
+          { label: "Loại sách", value: "Ebook" },
+          { label: "Khổ sách", value: "14.5 x 20.5" },
+          { label: "Số trang", value: "348" },
+          { label: "Quốc gia", value: "Việt Nam" },
+          { label: "Ngôn ngữ", value: "vi" },
+          { label: "Mã ISBN", value: "N/A" },
+          { label: "Mã ISBN Điện tử", value: "978-604-46-0091-8" }
+        ],
+        summary: [
+          "Cuốn sách tuyển chọn các bài viết và phát biểu tiêu biểu, nhấn mạnh tinh thần đoàn kết, khát vọng phát triển đất nước và niềm tin vào vai trò lãnh đạo của Đảng.",
+          "Nội dung tập trung làm rõ các định hướng lớn về xây dựng Đảng, phát triển kinh tế - xã hội, quốc phòng, đối ngoại và phát huy sức mạnh đại đoàn kết toàn dân tộc.",
+          "Từ mục Giới thiệu/Mục lục, sách được trình bày theo các chủ đề trọng tâm giúp bạn đọc tra cứu, học tập và nghiên cứu thuận tiện."
+        ],
+        authors: [
+          "Nguyễn Phú Trọng",
+          "Nhà xuất bản Chính trị quốc gia Sự thật (tổ chức biên tập)"
+        ],
+        sourceUrl: "https://sachquocgia.vn/sach-noi-tu-hao-va-tin-tuong-duoi-la-co-ve-vang-cua-dang-quyet-tam-xay-dung-mot-nuoc-viet-nam-ngay-cang-giau-manh-van-minh-van-hien-va-anh-hung-b12401.html"
+      };
+    }
+  }
+
   class CitationService {
     constructor() {
       this.books = [
@@ -403,12 +432,33 @@
         (normalized.indexOf("dang vien") > -1 ||
           normalized.indexOf("phat ngon") > -1 ||
           normalized.indexOf("lap truong tu tuong") > -1);
+      const isBookInfoStarter =
+        normalized.indexOf("thong tin 1 cuon sach") > -1 ||
+        normalized.indexOf("thong tin cuon sach") > -1 ||
+        normalized.indexOf("thong tin xuat ban") > -1 ||
+        normalized.indexOf("nam xb") > -1 ||
+        normalized.indexOf("ma isbn") > -1 ||
+        normalized.indexOf("ma isbn dien tu") > -1 ||
+        normalized.indexOf("tom tat noi dung") > -1 ||
+        normalized.indexOf("muc gioi thieu") > -1 ||
+        normalized.indexOf("muc luc") > -1 ||
+        normalized.indexOf("danh sach tac gia") > -1 ||
+        normalized.indexOf("tac gia") > -1 ||
+        normalized.indexOf("noi tu hao va tin tuong") > -1 ||
+        normalized.indexOf("b12401") > -1;
 
       if (isReportStarter) {
         return {
           kind: "discipline_demo",
           text: "Mình đã tổng hợp nội dung báo cáo từ kho dữ liệu sách bản quyền. Bạn có thể bấm vào Fig để xem chi tiết.",
           payload: this.ctx.disciplineDemoService.buildReportPayload()
+        };
+      }
+      if (isBookInfoStarter) {
+        return {
+          kind: "book_info_demo",
+          text: "Mình đã truy xuất thông tin demo của cuốn sách trên hệ thống. Bạn xem đầy đủ Thông tin xuất bản, Tóm tắt nội dung và Danh sách tác giả bên dưới.",
+          payload: this.ctx.bookInfoDemoService.buildPayload()
         };
       }
       if (isDisciplineStarter || isDisciplineQuestion) {
@@ -434,7 +484,7 @@
       }
       return {
         kind: "text",
-        text: "Bạn có thể thử 2 mẫu: 'Lập báo cáo chuyên môn về ...' hoặc 'Tìm trích dẫn về ... trong cuốn ...'. Mình sẽ trả kết quả theo đúng luồng demo."
+        text: "Bạn có thể thử 3 mẫu: 'Lập báo cáo chuyên môn về ...', 'Tìm trích dẫn về ... trong cuốn ...', hoặc 'Cho mình thông tin xuất bản/tóm tắt/tác giả của cuốn b12401'."
       };
     }
   }
@@ -447,11 +497,13 @@
       this.reportStore = new Map();
       this.citationService = new CitationService();
       this.disciplineDemoService = new DisciplineDemoService();
+      this.bookInfoDemoService = new BookInfoDemoService();
       this.reportService = new ReportExportService();
       this.engine = config.mode === "gemini" ? new ChatEngineGemini() : new ChatEngineMock({
         config: config,
         citationService: this.citationService,
         disciplineDemoService: this.disciplineDemoService,
+        bookInfoDemoService: this.bookInfoDemoService,
         reportService: this.reportService
       });
       this.activeCitationPayload = null;
@@ -482,9 +534,10 @@
         + "<div class='ai-chatbot-body'>"
                 + "<div class='ai-chatbot-empty'><div class='ai-chatbot-empty-icon'><img src='assets/img/Chatbot.svg' alt='AI BookMan'></div><h4>Chào mừng bạn đến với Trợ lý VHMT AI BookMan. Bạn cần hỗ trợ gì?</h4><p>Nhập câu hỏi của bạn ở vùng nhập nội dung hoặc chọn những chủ đề gợi ý</p></div>"
         + "<div class='ai-chatbot-thread' aria-live='polite'></div>"
-                + "<div class='ai-chatbot-starters'>"
+        + "<div class='ai-chatbot-starters'>"
         + "<button type='button' data-starter='Báo cáo từ dữ liệu sách bản quyền trên hệ thống'><i class='bi bi-journal-text'></i><span>Báo cáo từ dữ liệu sách bản quyền trên hệ thống</span></button>"
         + "<button type='button' data-starter='Trích dẫn về một nội dung từ kho sách bản quyền'><i class='bi bi-blockquote-left'></i><span>Tìm trích dẫn về một nội dung</span></button>"
+        + "<button type='button' data-starter='Cho mình thông tin xuất bản, tóm tắt nội dung và danh sách tác giả của cuốn b12401'><i class='bi bi-book'></i><span>Demo thông tin 1 cuốn sách</span></button>"
         + "</div>"
         + "</div>"
         + "<form class='ai-chatbot-composer'><div class='ai-composer-field'><textarea rows='1' placeholder='Nhập câu hỏi cho BookMan...'></textarea><span class='ai-composer-aiicon' aria-hidden='true'><img src='assets/img/ai-icon.svg' alt='AI'></span></div><button type='submit' aria-label='Gửi'><i class='bi bi-send-fill'></i></button></form>"
@@ -799,6 +852,16 @@
         });
         return;
       }
+      if (response.kind === "book_info_demo") {
+        this.pushMessage({ role: "bot", type: "text", content: response.text || "Mình đã tổng hợp thông tin sách." });
+        this.pushMessage({
+          role: "bot",
+          type: "book_info_result",
+          content: "Thông tin sách:",
+          meta: { payload: response.payload || null }
+        });
+        return;
+      }
       this.pushMessage({ role: "bot", type: "text", content: response.text || "Mình đã nhận yêu cầu." });
     }
 
@@ -842,8 +905,43 @@
         node.innerHTML = "<div class='ai-msg-bubble'><p>" + esc(message.content) + "</p><div class='ai-citation-list'>" + resultButtons + "</div></div>";
       } else if (message.type === "discipline_result") {
         node.innerHTML = this.renderDisciplineResult(message.meta && message.meta.payload);
+      } else if (message.type === "book_info_result") {
+        node.innerHTML = this.renderBookInfoResult(message.meta && message.meta.payload);
       }
       this.thread.appendChild(node);
+    }
+
+    renderBookInfoResult(payload) {
+      if (!payload) {
+        return "<div class='ai-msg-bubble'><p>Không có dữ liệu sách để hiển thị.</p></div>";
+      }
+
+      const publicationRows = (payload.publication || []).map(function (row) {
+        return "<tr><th>" + esc(row.label || "") + ":</th><td>" + esc(row.value || "") + "</td></tr>";
+      }).join("");
+      const summaryRows = (payload.summary || []).map(function (line) {
+        return "<li>" + esc(line) + "</li>";
+      }).join("");
+      const authorRows = (payload.authors || []).map(function (name) {
+        return "<li>" + esc(name) + "</li>";
+      }).join("");
+
+      return "<div class='ai-msg-bubble ai-knowledge-card ai-book-info-card'>"
+        + "<h4 class='ai-knowledge-title'>Thông tin cuốn sách: " + esc(payload.title || "") + "</h4>"
+        + "<section class='ai-discipline-section'>"
+        + "<h5>1. Thông tin xuất bản</h5>"
+        + "<table class='ai-book-meta-table'><tbody>" + publicationRows + "</tbody></table>"
+        + "</section>"
+        + "<section class='ai-discipline-section'>"
+        + "<h5>2. Tóm tắt nội dung (từ mục Giới thiệu/Mục lục)</h5>"
+        + "<ul class='ai-book-info-list'>" + summaryRows + "</ul>"
+        + "</section>"
+        + "<section class='ai-discipline-section'>"
+        + "<h5>3. Danh sách tác giả</h5>"
+        + "<ul class='ai-book-info-list'>" + authorRows + "</ul>"
+        + "</section>"
+        + "<p class='ai-book-info-note'><strong>Nguồn demo:</strong> " + esc(payload.sourceUrl || "") + "</p>"
+        + "</div>";
     }
 
     renderDisciplineResultLegacy(payload) {
